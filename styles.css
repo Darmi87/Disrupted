@@ -50,8 +50,8 @@ section {
 
 /* FORMATO CUADRADO PARA INFLUENCERS */
 .influencer {
-    width: 200px;
-    height: 200px;
+    width: 380px;
+    height: 380px;
     background: #fff;
     display: flex;
     align-items: center;
