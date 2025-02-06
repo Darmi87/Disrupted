@@ -49,21 +49,10 @@ section {
     max-width: 90%; /* Asegura que no se pase de los bordes */
     margin: auto; /* Centra la grilla */
 }
-
-
-/* Contenedor cuadrado para cada influencer */
 .influencer {
-    width: 300px;
-    height: 300px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    margin-bottom: 40px; /* Aumenta la separación entre filas */
+    width: 100%; /* Usa todo el espacio disponible en su columna */
+    max-width: 200px; /* Evita que crezcan demasiado */
+    margin-bottom: 40px; /* Espaciado entre filas */
 }
 
 /* Ajusta el tamaño de la imagen dentro del cuadro */
