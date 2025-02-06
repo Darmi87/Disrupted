@@ -41,34 +41,38 @@ section {
 }
 
 /* Contenedor de la grilla de influencers */
+/* Contenedor de la grilla de influencers */
 .roster .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
-    gap: 20px;
-    justify-content: center;
+    gap: 15px; /* Reduce la separación entre imágenes */
+    justify-content: center; /* Centra la grilla */
     align-items: center;
+    max-width: 90%; /* Limita el ancho total para que no toque los bordes */
+    margin: auto; /* Centra la grilla en la pantalla */
 }
 
-/* Formato cuadrado para cada influencer */
+/* Contenedor cuadrado para cada influencer */
 .influencer {
-    width: 400px;  /* Define un tamaño uniforme para todos */
-    height: 400px; /* Hace que todos sean cuadrados */
-    background: #fff; /* Fondo opcional */
+    width: 200px;
+    height: 200px;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px; /* Bordes redondeados opcionales */
-    overflow: hidden; /* Asegura que nada sobresalga */
+    border-radius: 10px;
+    overflow: hidden;
     position: relative;
     transition: transform 0.3s ease-in-out;
+    margin-bottom: 40px; /* Aumenta la separación entre filas */
 }
 
-/* Imágenes dentro del cuadro */
+/* Ajusta el tamaño de la imagen dentro del cuadro */
 .influencer img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Mantiene proporciones dentro del cuadro */
-    filter: grayscale(100%); /* Blanco y negro por defecto */
+    object-fit: contain;
+    filter: grayscale(100%);
     transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
@@ -112,43 +116,26 @@ section {
     text-decoration: none;
 }
 
-/* 🔹 Diseño responsive */
+/* 🔹 Diseño responsivo */
 @media (max-width: 1024px) {
     .roster .grid {
         grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+        max-width: 85%; /* Ajusta el ancho en pantallas medianas */
     }
 }
 
 @media (max-width: 768px) {
     .roster .grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+        max-width: 80%;
     }
 }
 
 @media (max-width: 480px) {
     .roster .grid {
         grid-template-columns: repeat(1, 1fr); /* 1 influencer por fila en pantallas pequeñas */
+        max-width: 70%;
     }
-}
-
-.influencer img {
-    width: 100%;
-    display: block;
-    filter: grayscale(100%);
-    transition: 0.3s;
-}
-.influencer:hover img {
-    filter: grayscale(0%);
-}
-.info {
-    text-align: center;
-    padding: 10px;
-}
-.socials {
-    display: none;
-}
-.influencer:hover .socials {
-    display: block;
 }
 
 /* Sección de empresas */
