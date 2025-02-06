@@ -40,17 +40,16 @@ section {
     text-align: center;
 }
 
-/* Contenedor de la grilla de influencers */
-/* Contenedor de la grilla de influencers */
 .roster .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
+    grid-template-columns: repeat(4, 1fr); /* Asegura 4 columnas */
     gap: 15px; /* Reduce la separación entre imágenes */
-    justify-content: center; /* Centra la grilla */
+    justify-content: center; /* Asegura que todo esté centrado */
     align-items: center;
-    max-width: 90%; /* Limita el ancho total para que no toque los bordes */
-    margin: auto; /* Centra la grilla en la pantalla */
+    max-width: 90%; /* Asegura que no se pase de los bordes */
+    margin: auto; /* Centra la grilla */
 }
+
 
 /* Contenedor cuadrado para cada influencer */
 .influencer {
