@@ -82,8 +82,8 @@ section {
 
 /* Efecto hover: imagen a color */
 .influencer:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.1);
+    filter: grayscale(0%); /* Quita el efecto de gris al pasar el mouse */
+    transform: scale(1.1); /* Pequeño zoom para hacer más dinámico */
 }
 
 /* Nombre y redes sociales */
