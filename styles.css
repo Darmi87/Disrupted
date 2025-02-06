@@ -98,10 +98,6 @@ section {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Efecto hover (opcional) */
-.empresas .grid img:hover {
-    transform: scale(1.1);
-}
 
 /* 🔹 Estilos específicos para móviles */
 @media (max-width: 768px) {
