@@ -23,7 +23,7 @@
     position: fixed;  /* Mantiene el logo flotante */
     top: 20px;        /* Margen superior */
     left: 20px;       /* Margen izquierdo */
-    width: 120px;     /* Aumenta el tamaño del logo (prueba con 150px, 180px, etc.) */
+    width: 150px;     /* Aumenta el tamaño del logo (prueba con 150px, 180px, etc.) */
     max-width: 15vw;  /* Aumenta el tamaño dinámico en pantallas grandes */
     z-index: 100;     /* Se mantiene sobre otros elementos */
 }
