@@ -39,6 +39,11 @@ section {
     padding: 60px 20px;
     text-align: center;
 }
+.roster {
+    max-width: 1200px; /* Ajusta este valor según el diseño */
+    width: 100%;
+    margin: auto;
+}
 
 .roster .grid {
     display: grid;
