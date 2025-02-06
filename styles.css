@@ -6,60 +6,27 @@
     font-family: Arial, sans-serif;
 }
 
-/* Estilos del Home */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-#bg-video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.logo {
-    position: fixed;  /* Mantiene el logo flotante */
-    top: 20px;        /* Margen superior */
-    left: 20px;       /* Margen izquierdo */
-    width: 180px;     /* Aumenta el tamaño del logo (prueba con 150px, 180px, etc.) */
-    max-width: 15vw;  /* Aumenta el tamaño dinámico en pantallas grandes */
-    z-index: 100;     /* Se mantiene sobre otros elementos */
-}
-
-.logo img {
-    width: 100%;  /* Se ajusta al tamaño del contenedor */
-    height: auto; /* Mantiene la proporción correcta */
-}
-
-
-/* Secciones */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
+/* Contenedor del Roster */
 .roster {
-    max-width: 1200px; /* Ajusta este valor según el diseño */
-    width: 100%;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Centrar el grid y ajustar las imágenes */
+.roster .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
+    gap: 20px; /* Espaciado entre imágenes */
+    justify-content: center; /* Centra el contenido */
+    max-width: 90%; /* Limita el ancho total */
     margin: auto;
 }
 
-.roster .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Asegura 4 columnas */
-    gap: 15px; /* Reduce la separación entre imágenes */
-    justify-content: center; /* Asegura que todo esté centrado */
-    align-items: center;
-    max-width: 90%; /* Asegura que no se pase de los bordes */
-    margin: auto; /* Centra la grilla */
-}
-/* Ajuste del tamaño de cada influencer */
+/* Formato cuadrado para cada influencer */
 .influencer {
-    width: 230px;  /* Aumenta el tamaño del cuadro */
-    height: 230px; /* Hace que sigan siendo cuadrados */
-    max-width: 100%;
-    background: #fff;
+    width: 230px;  /* Tamaño del cuadro */
+    height: 230px; /* Mantiene el formato cuadrado */
+    background: #fff; /* Fondo blanco */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,23 +34,22 @@ section {
     overflow: hidden;
     position: relative;
     transition: transform 0.3s ease-in-out;
-    margin-bottom: 50px; /* Aumenta el espacio entre filas */
-    filter: grayscale(100%); /* Aplica el efecto en blanco y negro */
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Suaviza la transición */
+    margin-bottom: 50px; /* Espaciado entre filas */
 }
 
-/* Ajuste del tamaño de las imágenes dentro del cuadro */
+/* Imágenes dentro del cuadro */
 .influencer img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Mantiene proporciones sin cortar la imagen */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio sin distorsión */
+    filter: grayscale(100%); /* Blanco y negro por defecto */
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-
-/* Efecto hover: imagen a color */
+/* Efecto hover: Imagen a color */
 .influencer:hover img {
-    filter: grayscale(0%); /* Quita el efecto de gris al pasar el mouse */
-    transform: scale(1.1); /* Pequeño zoom para hacer más dinámico */
+    filter: grayscale(0%); /* Vuelve a color */
+    transform: scale(1.1); /* Efecto de zoom */
 }
 
 /* Nombre y redes sociales */
@@ -124,82 +90,17 @@ section {
 @media (max-width: 1024px) {
     .roster .grid {
         grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
-        max-width: 85%; /* Ajusta el ancho en pantallas medianas */
     }
 }
 
 @media (max-width: 768px) {
     .roster .grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
-        max-width: 80%;
     }
 }
 
 @media (max-width: 480px) {
     .roster .grid {
         grid-template-columns: repeat(1, 1fr); /* 1 influencer por fila en pantallas pequeñas */
-        max-width: 70%;
-    }
-}
-
-/* Sección de empresas */
-.empresas {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-/* Contenedor de la grilla */
-.empresas .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajuste automático */
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Estilos de los logos */
-.empresas .grid img {
-    max-width: 100%;  /* Hace que el logo nunca se corte */
-    max-height: 100px; /* Altura uniforme */
-    object-fit: contain; /* Asegura que el logo completo se vea sin cortes */
-    padding: 10px; /* Espaciado entre logos */
-    transition: transform 0.3s ease-in-out;
-}
-
-
-/* 🔹 Estilos específicos para móviles */
-@media (max-width: 768px) {
-    .empresas .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 logos por fila en móviles */
-    }
-}
-
-@media (max-width: 480px) {
-    .empresas .grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 logo por fila en pantallas muy pequeñas */
-    }
-}
-
-
-/* Contacto */
-.contacto form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-}
-.contacto input, .contacto textarea, .contacto button {
-    margin: 10px 0;
-    padding: 10px;
-    width: 100%;
-}
-
-/* Versión móvil */
-@media (max-width: 768px) {
-    .roster .grid {
-        grid-template-columns: 1fr;
-    }
-    .empresas .grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
