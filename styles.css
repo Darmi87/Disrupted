@@ -54,20 +54,29 @@ section {
     max-width: 90%; /* Asegura que no se pase de los bordes */
     margin: auto; /* Centra la grilla */
 }
+/* Ajuste del tamaño de cada influencer */
 .influencer {
-    width: 100%; /* Usa todo el espacio disponible en su columna */
-    max-width: 200px; /* Evita que crezcan demasiado */
-    margin-bottom: 40px; /* Espaciado entre filas */
+    width: 230px;  /* Aumenta el tamaño del cuadro */
+    height: 230px; /* Hace que sigan siendo cuadrados */
+    max-width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; 
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 50px; /* Aumenta el espacio entre filas */
 }
 
-/* Ajusta el tamaño de la imagen dentro del cuadro */
+/* Ajuste del tamaño de las imágenes dentro del cuadro */
 .influencer img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    object-fit: contain; /* Mantiene proporciones sin cortar la imagen */
 }
+
 
 /* Efecto hover: imagen a color */
 .influencer:hover img {
