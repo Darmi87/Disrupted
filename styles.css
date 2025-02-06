@@ -74,11 +74,21 @@ section {
     display: block;
 }
 
-/* Empresas */
-.empresas img {
-    max-width: 100%;
-    height: auto;
+/* Estilos para los logos de empresas */
+.empresas .grid img {
+    max-height: 100px;  /* Define una altura uniforme para todos los logos */
+    width: auto;        /* Mantiene las proporciones sin deformar */
+    object-fit: contain; /* Evita que los logos se corten */
+    padding: 10px;      /* Espaciado entre logos */
+    transition: 0.3s ease-in-out;
 }
+
+/* Efecto hover opcional */
+.empresas .grid img:hover {
+    opacity: 0.8; /* O usa filter: grayscale(100%); para un efecto en blanco y negro */
+    transform: scale(1.1); /* Hace que el logo crezca ligeramente */
+}
+
 
 /* Contacto */
 .contacto form {
