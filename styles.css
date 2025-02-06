@@ -74,11 +74,46 @@ section {
     display: block;
 }
 
+/* Sección de empresas */
+.empresas {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Contenedor de la grilla */
+.empresas .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajuste automático */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos de los logos */
 .empresas .grid img {
-    max-height: 100px;  /* Controla la altura de los logos */
-    width: auto;       /* Mantiene las proporciones */
-    object-fit: contain; /* Evita que se corten */
-    padding: 10px;     /* Espaciado uniforme */
+    max-width: 100%;  /* Hace que el logo nunca se corte */
+    max-height: 100px; /* Altura uniforme */
+    object-fit: contain; /* Asegura que el logo completo se vea sin cortes */
+    padding: 10px; /* Espaciado entre logos */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover (opcional) */
+.empresas .grid img:hover {
+    transform: scale(1.1);
+}
+
+/* 🔹 Estilos específicos para móviles */
+@media (max-width: 768px) {
+    .empresas .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 logos por fila en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .empresas .grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 logo por fila en pantallas muy pequeñas */
+    }
 }
 
 
