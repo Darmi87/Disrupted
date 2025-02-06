@@ -40,20 +40,97 @@ section {
     text-align: center;
 }
 
-/* Roster - Grilla */
-.roster .grid, .empresas .grid {
+/* Contenedor de la grilla de influencers */
+.roster .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
     gap: 20px;
     justify-content: center;
     align-items: center;
 }
 
-/* Estilos de los influencers */
+/* Formato cuadrado para cada influencer */
 .influencer {
+    width: 200px;  /* Define un tamaño uniforme para todos */
+    height: 200px; /* Hace que todos sean cuadrados */
+    background: #fff; /* Fondo opcional */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Bordes redondeados opcionales */
+    overflow: hidden; /* Asegura que nada sobresalga */
     position: relative;
-    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
+
+/* Imágenes dentro del cuadro */
+.influencer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Mantiene proporciones dentro del cuadro */
+    filter: grayscale(100%); /* Blanco y negro por defecto */
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Efecto hover: imagen a color */
+.influencer:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Nombre y redes sociales */
+.influencer .info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Mostrar nombre y redes al hacer hover */
+.influencer:hover .info {
+    opacity: 1;
+}
+
+/* Redes sociales */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.socials a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* 🔹 Diseño responsive */
+@media (max-width: 1024px) {
+    .roster .grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .roster .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .roster .grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 influencer por fila en pantallas pequeñas */
+    }
+}
+
 .influencer img {
     width: 100%;
     display: block;
