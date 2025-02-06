@@ -68,6 +68,8 @@ section {
     position: relative;
     transition: transform 0.3s ease-in-out;
     margin-bottom: 50px; /* Aumenta el espacio entre filas */
+    filter: grayscale(100%); /* Aplica el efecto en blanco y negro */
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Suaviza la transición */
 }
 
 /* Ajuste del tamaño de las imágenes dentro del cuadro */
