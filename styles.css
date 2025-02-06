@@ -51,8 +51,8 @@ section {
 
 /* Formato cuadrado para cada influencer */
 .influencer {
-    width: 200px;  /* Define un tamaño uniforme para todos */
-    height: 200px; /* Hace que todos sean cuadrados */
+    width: 400px;  /* Define un tamaño uniforme para todos */
+    height: 400px; /* Hace que todos sean cuadrados */
     background: #fff; /* Fondo opcional */
     display: flex;
     align-items: center;
