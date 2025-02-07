@@ -45,12 +45,13 @@ section {
 }
 /* NUESTROS TALENTOS: GRID */
 .roster .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    justify-content: center;
-    max-width: 90%;
-    margin: auto;
+display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 20px; /* Espaciado entre influencers */
+    justify-content: center; /* Centra la grilla horizontalmente */
+    align-items: center; /* Asegura que las filas estén bien alineadas */
+    max-width: 90%; /* Limita el ancho total */
+    margin: auto; /* Centra la grilla en la página */
 }
 
 /* FORMATO CUADRADO PARA INFLUENCERS */
