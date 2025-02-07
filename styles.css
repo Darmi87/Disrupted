@@ -6,18 +6,21 @@
     font-family: Arial, sans-serif;
 }
 
-/* LOGO FIJO EN LA ESQUINA SUPERIOR IZQUIERDA */
+/* Logo fijo en la esquina superior izquierda */
 .logo {
     position: fixed;
     top: 20px;
     left: 20px;
-    width: 80px;
+    width: 120px;  /* Aumenta el tamaño */
     z-index: 100;
+    transition: filter 0.3s ease-in-out; /* Suaviza el cambio de color */
 }
 .logo img {
     width: 100%;
     height: auto;
+    filter: invert(1); /* Por defecto, el logo será blanco */
 }
+
 
 /* HOME: Video en loop */
 .hero {
