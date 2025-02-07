@@ -52,7 +52,7 @@ display: grid;
     align-items: center; /* Asegura que las filas estén bien alineadas */
     max-width: 90%; /* Limita el ancho total */
     margin: auto; /* Centra la grilla en la página */
-    padding-left: 100px;
+    padding-left: 110px;
 }
 
 /* FORMATO CUADRADO PARA INFLUENCERS */
