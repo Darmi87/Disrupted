@@ -127,15 +127,31 @@ display: grid;
     width: 100%;
 }
 
-/* RESPONSIVE */
+/* 🔹 Versión móvil (Influencers: 1 por fila, Empresas: 2 por fila) */
 @media (max-width: 768px) {
-    .roster .grid, .brands .grid {
+    /* Influencers: 2 por fila en tablets */
+    .roster .grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 0; /* Elimina el ajuste de escritorio */
+        justify-content: center; /* Centra los influencers */
+    }
+
+    /* Empresas: 2 logos por fila */
+    .brands .grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 480px) {
-    .roster .grid, .brands .grid {
+    /* Influencers: 1 por fila en móviles pequeños */
+    .roster .grid {
         grid-template-columns: repeat(1, 1fr);
+        justify-content: center; /* Centra los influencers */
+    }
+
+    /* Empresas: Mantiene 2 logos por fila */
+    .brands .grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
