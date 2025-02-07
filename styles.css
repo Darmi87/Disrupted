@@ -100,11 +100,16 @@ display: grid;
 }
 
 /* BIG BRANDS */
+.brands {
+    text-align: center;
+    padding: 60px 20px;
+}
 .brands .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
     gap: 20px;
     justify-content: center;
+    align-items: center;
     max-width: 90%;
     margin: auto;
 }
@@ -112,6 +117,12 @@ display: grid;
     max-height: 100px;
     width: auto;
     object-fit: contain;
+}
+.brands .grid img {
+    max-width: 100%; /* Asegura que el logo no se salga */
+    max-height: 100px; /* Ajusta la altura para mantener proporciones */
+    object-fit: contain; /* Evita que el logo se deforme */
+    padding: 10px; /* Espaciado alrededor de los logos */
 }
 
 /* FORMULARIO DE CONTACTO */
@@ -136,10 +147,27 @@ display: grid;
         justify-content: center; /* Centra los influencers */
     }
 
-    /* Empresas: 2 logos por fila */
+    /* 🔹 Ajustes para tablets (máx. 768px) */
+@media (max-width: 768px) {
     .brands .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 logos por fila en tablets */
+        max-width: 80%; /* Reduce el ancho para mejor ajuste */
     }
+}
+
+/* 🔹 Ajustes para móviles pequeños (máx. 480px) */
+@media (max-width: 480px) {
+    .brands .grid {
+        grid-template-columns: repeat(2, 1fr); /* Mantiene 2 logos por fila */
+        max-width: 90%; /* Ajusta el ancho */
+        gap: 10px; /* Reduce el espacio entre logos */
+    }
+
+    .brands .grid img {
+        max-height: 80px; /* Reduce la altura de los logos en móviles */
+        padding: 5px; /* Menos espaciado en móviles */
+    }
+}
 }
 
 @media (max-width: 480px) {
@@ -147,11 +175,6 @@ display: grid;
     .roster .grid {
         grid-template-columns: repeat(1, 1fr);
         justify-content: center; /* Centra los influencers */
-    }
-
-    /* Empresas: Mantiene 2 logos por fila */
-    .brands .grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
