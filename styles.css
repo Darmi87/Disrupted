@@ -37,7 +37,12 @@ section {
     padding: 60px 20px;
     text-align: center;
 }
-
+/* Sección de influencers con fondo gris */
+.roster {
+    background: rgb(209, 209, 209); /* Gris claro */
+    padding: 60px 20px; /* Espaciado para que no quede pegado */
+    text-align: center;
+}
 /* NUESTROS TALENTOS: GRID */
 .roster .grid {
     display: grid;
