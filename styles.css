@@ -5,6 +5,18 @@
     box-sizing: border-box;
     font-family: "Monument Extended", sans-serif;
 }
+@font-face {
+    font-family: "Monument Extended";
+    src: url("PPMonumentExtended-Black.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplicar la fuente al logo y títulos */
+.logo-text, h1, h2 {
+    font-family: "Monument Extended", sans-serif;
+}
+
 
 /* 🔹 Preloader (Pantalla de carga) */
 .preloader {
