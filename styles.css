@@ -5,12 +5,6 @@
     box-sizing: border-box;
     font-family: "Monument Extended", sans-serif;
 }
-@font-face {
-    font-family: "Monument Extended";
-    src: url("PPMonumentExtended-Black.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* 🔹 Pantalla de carga */
 .preloader {
@@ -21,24 +15,21 @@
     height: 100vh;
     background: black;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 999;
-    transition: opacity 1s ease-out, visibility 1s ease-out;
+    z-index: 9999;
 }
 
 /* 🔹 Caja del logo */
 .logo-box {
-    position: relative;
     width: 140px;
-    height: 50px;
+    height: 140px;
     border: 3px solid white;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
 /* 🔹 Texto del logo */
@@ -46,8 +37,7 @@
     font-size: 24px;
     font-weight: bold;
     color: white;
-    transform: translateX(0);
-    transition: transform 1.5s ease-out;
+    opacity: 0; /* Inicialmente oculto */
 }
 
 /* 🔹 Invertir solo la "D" */
@@ -56,199 +46,70 @@
     transform: scaleX(-1);
 }
 
-/* 🔹 Slogan */
-.slogan {
-    font-size: 14px;
+/* 🔹 Slogan (Oculto al inicio) */
+.slogan-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: -200px; /* Se moverá con la animación */
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.slogan p {
+    font-size: 24px;
+    font-weight: bold;
     color: white;
-    opacity: 0;
-    margin-top: 10px;
-    transition: opacity 1s ease-in-out;
+    opacity: 0; /* Oculto al inicio */
+    margin-left: 10px;
 }
 
-/* 🔹 Animación: Expande el texto fuera de la caja */
-.preloader.active .logo-text {
-    transform: translateX(30px);
-}
-
-/* 🔹 Hace que la caja desaparezca */
-.preloader.active .logo-box {
-    width: 100px;
-    height: 40px;
-    border: none;
-}
-
-/* 🔹 Hace aparecer el slogan */
-.preloader.active .slogan {
-    opacity: 1;
-}
-
-/* 🔹 Desaparecer preloader y mover logo */
-.preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* 🔹 Posición final del logo en la esquina */
+/* 🔹 Botón del menú (Caja en la esquina) */
 .logo-box.final-position {
     position: fixed;
     top: 20px;
     left: 20px;
-    width: 80px;
-    height: 40px;
-    transition: top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
+    width: 60px;
+    height: 60px;
+    border: 3px solid white;
+    transition: all 1s ease-in-out;
 }
 
-/* 🔹 Mostrar contenido principal después de la animación */
-.content {
-    display: none;
-}
-.content.visible {
-    display: block;
-}
-
-/* SECCIONES */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-/* Sección de influencers con fondo gris */
-.roster {
-    background: rgb(209, 209, 209); /* Gris claro */
-    padding: 60px 20px; /* Espaciado para que no quede pegado */
-    text-align: center;
-}
-/* NUESTROS TALENTOS: GRID */
-.roster .grid {
-display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 20px; /* Espaciado entre influencers */
-    justify-content: center; /* Centra la grilla horizontalmente */
-    align-items: center; /* Asegura que las filas estén bien alineadas */
-    max-width: 90%; /* Limita el ancho total */
-    margin: auto; /* Centra la grilla en la página */
-    padding-left: 110px;
-}
-
-/* FORMATO CUADRADO PARA INFLUENCERS */
-.influencer {
-    width: 380px;
-    height: 380px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    margin-bottom: 50px;
-}
-
-/* IMÁGENES EN BLANCO Y NEGRO CON EFECTO HOVER */
-.influencer img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-.influencer:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.1);
-}
-
-/* NOMBRE Y REDES SOCIALES */
-.influencer .info {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+/* 🔹 Menú (Oculto al inicio) */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background: black;
     color: white;
-    padding: 5px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-.influencer:hover .info {
-    opacity: 1;
-}
-
-/* BIG BRANDS */
-.brands {
-    text-align: center;
-    padding: 60px 20px;
-}
-.brands .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    max-width: 90%;
-    margin: auto;
-}
-.brands img {
-    max-height: 100px;
-    width: auto;
-    object-fit: contain;
-}
-.brands .grid img {
-    max-width: 100%; /* Asegura que el logo no se salga */
-    max-height: 100px; /* Ajusta la altura para mantener proporciones */
-    object-fit: contain; /* Evita que el logo se deforme */
-    padding: 10px; /* Espaciado alrededor de los logos */
-}
-
-/* FORMULARIO DE CONTACTO */
-.contact form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-}
-.contact input, .contact textarea, .contact button {
-    margin: 10px 0;
-    padding: 10px;
-    width: 100%;
+    justify-content: center;
+    transition: left 0.5s ease-in-out;
 }
 
-/* 🔹 Versión móvil (Influencers: 1 por fila, Empresas: 2 por fila) */
-@media (max-width: 768px) {
-    /* Influencers: 2 por fila en tablets */
-    .roster .grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding-left: 0; /* Elimina el ajuste de escritorio */
-        justify-content: center; /* Centra los influencers */
-    }
-
-    /* 🔹 Ajustes para tablets (máx. 768px) */
-@media (max-width: 768px) {
-    .brands .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 logos por fila en tablets */
-        max-width: 80%; /* Reduce el ancho para mejor ajuste */
-    }
+.menu ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* 🔹 Ajustes para móviles pequeños (máx. 480px) */
-@media (max-width: 480px) {
-    .brands .grid {
-        grid-template-columns: repeat(2, 1fr); /* Mantiene 2 logos por fila */
-        max-width: 90%; /* Ajusta el ancho */
-        gap: 10px; /* Reduce el espacio entre logos */
-    }
-
-    .brands .grid img {
-        max-height: 80px; /* Reduce la altura de los logos en móviles */
-        padding: 5px; /* Menos espaciado en móviles */
-    }
-}
+.menu ul li {
+    margin: 20px;
 }
 
-@media (max-width: 480px) {
-    /* Influencers: 1 por fila en móviles pequeños */
-    .roster .grid {
-        grid-template-columns: repeat(1, 1fr);
-        justify-content: center; /* Centra los influencers */
-    }
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }
+
+/* 🔹 Mostrar menú cuando el usuario haga clic en el botón */
+.menu.open {
+    left: 0;
+}
+
 
