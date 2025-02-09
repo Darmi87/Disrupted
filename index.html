@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISRUPTED</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISRUPTED - Agencia de Marketing Influencer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Animación de inicio -->
+  <div id="intro-animation">
+    <!-- Logo y slogan -->
+    <svg id="logo" width="200" height="200" viewBox="0 0 200 200">
+      <!-- Aquí irá el SVG del logo -->
+    </svg>
+    <h1 id="slogan">OUT<br>OF THE<br>BOX</h1>
+  </div>
 
-    <!-- LOGO ANIMADO -->
-    <div class="preloader">
-        <div class="logo-box">
-            <span class="logo-text">
-                <span class="inverted-d">D</span>ISRUPTED
-            </span>
-        </div>
+  <!-- Header -->
+  <header>
+    <div id="header-logo">
+      <!-- Logo pequeño (scroll to top) -->
+      <svg id="small-logo" width="50" height="50" viewBox="0 0 200 200">
+        <!-- Aquí irá el SVG del logo -->
+      </svg>
     </div>
-
-    <!-- SLOGAN (Oculto hasta la animación final) -->
-    <div class="slogan-container">
-        <div class="logo-box final-position"></div> <!-- Caja que se convierte en botón -->
-        <div class="slogan">
-            <p>OUT</p>
-            <p>OF</p>
-            <p>THE</p>
-            <p>BOX</p>
-        </div>
-    </div>
-
-    <!-- MENÚ (Oculto al inicio) -->
-    <nav class="menu">
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Quiénes Somos</a></li>
-            <li><a href="#">Nuestros Talentos</a></li>
-            <li><a href="#">Big Brands</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#nosotros">Sobre nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
+  </header>
 
+  <!-- Secciones -->
+  <section id="inicio">
+    <h2>Bienvenidos a DISRUPTED</h2>
+    <p>Somos una agencia de marketing influencer que piensa fuera de la caja.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Nuestros servicios</h2>
+    <p>Descubre cómo podemos ayudarte a destacar.</p>
+  </section>
+
+  <section id="portafolio">
+    <h2>Portafolio</h2>
+    <p>Algunos de nuestros proyectos más destacados.</p>
+  </section>
+
+  <section id="nosotros">
+    <h2>Sobre nosotros</h2>
+    <p>Conoce más sobre nuestra agencia y equipo.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¡Hablemos! Estamos listos para ayudarte.</p>
+  </section>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
