@@ -3,208 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disrupted - Influencer Marketing</title>
+    <title>DISRUPTED</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
 
-           <!-- PANTALLA DE CARGA CON ANIMACIÓN DEL LOGO -->
+    <!-- LOGO ANIMADO -->
     <div class="preloader">
         <div class="logo-box">
             <span class="logo-text">
                 <span class="inverted-d">D</span>ISRUPTED
             </span>
         </div>
-        <p class="slogan">OUT OF THE BOX</p>
     </div>
 
-    <!-- CONTENIDO PRINCIPAL (SE OCULTA DURANTE LA ANIMACIÓN) -->
-    <div class="content">
-        <header class="hero">
-            <h1>Bienvenidos a Disrupted</h1>
-        </header>
+    <!-- SLOGAN (Oculto hasta la animación final) -->
+    <div class="slogan-container">
+        <div class="logo-box final-position"></div> <!-- Caja que se convierte en botón -->
+        <div class="slogan">
+            <p>OUT</p>
+            <p>OF</p>
+            <p>THE</p>
+            <p>BOX</p>
+        </div>
     </div>
 
-    <!-- QUIÉNES SOMOS -->
-    <section class="about">
-        <h2>¿Quiénes Somos?</h2>
-        <p>Somos una agencia de influencer marketing que redefine las reglas del juego.</p>
-    </section>
-
-   <!-- NUESTROS TALENTOS -->
-    <section class="roster">
-        <h2>Nuestros Talentos</h2>
-        <div class="grid">
-            <!-- Fila 1 -->
-            <div class="influencer">
-                <img src="yair17.jpg" alt="influencer">
-                <div class="info">
-                    <h3>YAIR 17</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="antrax.jpg" alt="influencer">
-                <div class="info">
-                    <h3>ANTRAX</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="barbie.jpg" alt="influencer">
-                <div class="info">
-                    <h3>BARBIE PVM</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="juan.jpg" alt="influencer">
-                <div class="info">
-                    <h3>JUAN DE DIOS</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fila 2 -->
-            <div class="influencer">
-                <img src="boomsniper.jpg" alt="influencer">
-                <div class="info">
-                    <h3>BOOMSNIPER</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="josue.jpg" alt="influencer">
-                <div class="info">
-                    <h3>JOSUE07</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="erk.jpg" alt="influencer">
-                <div class="info">
-                    <h3>ERKVALDO</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="danyan.jpg" alt="influencer">
-                <div class="info">
-                    <h3>DANYAN CAT</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fila 3 -->
-            <div class="influencer">
-                <img src="aldo.jpg" alt="influencer">
-                <div class="info">
-                    <h3>ALDO DE NIGRIS</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="puni.jpg" alt="influencer">
-                <div class="info">
-                    <h3>PUNICHER</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="yetus.jpg" alt="influencer">
-                <div class="info">
-                    <h3>YETUS PRIME</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-            <div class="influencer">
-                <img src="angel.jpg" alt="influencer">
-                <div class="info">
-                    <h3>ANGEL SANTIBAÑEZ</h3>
-                    <div class="socials">
-                        <a href="#">📸</a>
-                        <a href="#">🐦</a>
-                        <a href="#">▶️</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- BIG BRANDS QUE HAN CONFIADO EN NOSOTROS -->
-    <section class="brands">
-        <h2>Big Brands</h2>
-        <div class="grid">
-            <img src="youtube.png" alt="Brand 1">
-            <img src="ea.png" alt="Brand 2">
-            <img src="twitch.png" alt="Brand 3">
-            <img src="discord.png" alt="Brand 4">
-            <img src="ggtech.png" alt="Brand 5">
-            <img src="sony.png" alt="Brand 6">
-            <img src="gamergy.png" alt="Brand 7">
-            <img src="telcel.png" alt="Brand 8">
-            <img src="tiktok.png" alt="Brand 9">
-            <img src="temu.png" alt="Brand 10">
-            <img src="garena.png" alt="Brand 11">
-            <!-- Agregar más logos de marcas -->
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contact">
-        <h2>Contacto</h2>
-        <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+    <!-- MENÚ (Oculto al inicio) -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Quiénes Somos</a></li>
+            <li><a href="#">Nuestros Talentos</a></li>
+            <li><a href="#">Big Brands</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
 
 </body>
 </html>
