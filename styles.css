@@ -1,38 +1,95 @@
-/* Reset básico */
+/* 🔹 Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Monument Extended", sans-serif;
 }
 
-/* Logo fijo en la esquina superior izquierda */
-.logo {
+/* 🔹 Preloader (Pantalla de carga) */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+/* 🔹 Caja del logo */
+.logo-box {
+    position: relative;
+    width: 140px;
+    height: 50px;
+    border: 2px solid white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔹 Texto del logo */
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    transform: translateX(0);
+    transition: transform 1s ease-out;
+}
+
+/* 🔹 Invertir solo la "D" */
+.inverted-d {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+/* 🔹 Slogan */
+.slogan {
+    position: absolute;
+    bottom: -30px;
+    font-size: 14px;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* 🔹 Animaciones */
+.preloader.active .logo-text {
+    transform: translateX(30px);
+}
+
+.preloader.active .slogan {
+    opacity: 1;
+}
+
+/* 🔹 Desaparecer preloader y mover logo */
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 🔹 Posición final del logo (esquina superior izquierda) */
+.logo-box.final-position {
     position: fixed;
     top: 20px;
     left: 20px;
-    width: 120px;  /* Aumenta el tamaño */
-    z-index: 100;
-    transition: filter 0.3s ease-in-out; /* Suaviza el cambio de color */
-}
-.logo img {
-    width: 100%;
-    height: auto;
-    filter: invert(1); /* Por defecto, el logo será blanco */
+    width: 80px;
+    height: 40px;
+    border-color: black;
+    transition: top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
 }
 
-
-/* HOME: Video en loop */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+/* 🔹 Mostrar contenido principal después de la animación */
+.content {
+    display: none;
 }
-.hero video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.content.visible {
+    display: block;
 }
 
 /* SECCIONES */
