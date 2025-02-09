@@ -1,115 +1,79 @@
-/* 🔹 Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Monument Extended", sans-serif;
+/* Estilos generales */
+body {
+  font-family: 'Monument Extended', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
 }
 
-/* 🔹 Pantalla de carga */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
+/* Animación de inicio */
+#intro-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
 }
 
-/* 🔹 Caja del logo */
-.logo-box {
-    width: 140px;
-    height: 140px;
-    border: 3px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+#logo {
+  width: 200px;
+  height: 200px;
 }
 
-/* 🔹 Texto del logo */
-.logo-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    opacity: 0; /* Inicialmente oculto */
+#slogan {
+  font-size: 2rem;
+  text-align: center;
+  margin-left: 20px;
 }
 
-/* 🔹 Invertir solo la "D" */
-.inverted-d {
-    display: inline-block;
-    transform: scaleX(-1);
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-/* 🔹 Slogan (Oculto al inicio) */
-.slogan-container {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: -200px; /* Se moverá con la animación */
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: all 1s ease-in-out;
+#small-logo {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
-.slogan p {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    opacity: 0; /* Oculto al inicio */
-    margin-left: 10px;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
-/* 🔹 Botón del menú (Caja en la esquina) */
-.logo-box.final-position {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    border: 3px solid white;
-    transition: all 1s ease-in-out;
+nav ul li {
+  margin: 0 15px;
 }
 
-/* 🔹 Menú (Oculto al inicio) */
-.menu {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 250px;
-    height: 100vh;
-    background: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: left 0.5s ease-in-out;
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
 }
 
-.menu ul {
-    list-style: none;
-    padding: 0;
+/* Secciones */
+section {
+  padding: 100px 20px;
+  text-align: center;
 }
 
-.menu ul li {
-    margin: 20px;
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
+section p {
+  font-size: 1.2rem;
 }
-
-/* 🔹 Mostrar menú cuando el usuario haga clic en el botón */
-.menu.open {
-    left: 0;
-}
-
-
