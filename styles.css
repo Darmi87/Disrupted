@@ -12,13 +12,7 @@
     font-style: normal;
 }
 
-/* Aplicar la fuente al logo y títulos */
-.logo-text, h1, h2 {
-    font-family: "Monument Extended", sans-serif;
-}
-
-
-/* 🔹 Preloader (Pantalla de carga) */
+/* 🔹 Pantalla de carga */
 .preloader {
     position: fixed;
     top: 0;
@@ -27,6 +21,7 @@
     height: 100vh;
     background: black;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 999;
@@ -38,11 +33,12 @@
     position: relative;
     width: 140px;
     height: 50px;
-    border: 2px solid white;
+    border: 3px solid white;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 1s ease-in-out;
 }
 
 /* 🔹 Texto del logo */
@@ -51,7 +47,7 @@
     font-weight: bold;
     color: white;
     transform: translateX(0);
-    transition: transform 1s ease-out;
+    transition: transform 1.5s ease-out;
 }
 
 /* 🔹 Invertir solo la "D" */
@@ -62,19 +58,26 @@
 
 /* 🔹 Slogan */
 .slogan {
-    position: absolute;
-    bottom: -30px;
     font-size: 14px;
     color: white;
     opacity: 0;
+    margin-top: 10px;
     transition: opacity 1s ease-in-out;
 }
 
-/* 🔹 Animaciones */
+/* 🔹 Animación: Expande el texto fuera de la caja */
 .preloader.active .logo-text {
     transform: translateX(30px);
 }
 
+/* 🔹 Hace que la caja desaparezca */
+.preloader.active .logo-box {
+    width: 100px;
+    height: 40px;
+    border: none;
+}
+
+/* 🔹 Hace aparecer el slogan */
 .preloader.active .slogan {
     opacity: 1;
 }
@@ -85,14 +88,13 @@
     visibility: hidden;
 }
 
-/* 🔹 Posición final del logo (esquina superior izquierda) */
+/* 🔹 Posición final del logo en la esquina */
 .logo-box.final-position {
     position: fixed;
     top: 20px;
     left: 20px;
     width: 80px;
     height: 40px;
-    border-color: black;
     transition: top 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
 }
 
