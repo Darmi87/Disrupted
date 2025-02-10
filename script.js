@@ -23,7 +23,6 @@ smallLogo.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
-// Scroll to top
 const smallLogo = document.getElementById("small-logo");
 smallLogo.addEventListener("click", () => {
   window.scrollTo({
