@@ -1,0 +1,41 @@
+/* 🔹 Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* 🔹 Contenedor de la animación */
+#logo-animation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* 🔹 `BOX` Logo (logo1) - Se mantiene cuadrado y visible */
+#logo1 {
+    opacity: 0;
+    width: 230px;  /* ⬅️ Ajustamos ligeramente su tamaño */
+    height: 230px;
+    object-fit: cover;
+    position: relative;
+    z-index: 10;
+}
+
+/* 🔹 Logos ocultos al inicio, más grandes y con menos separación */
+#logo2, #logo3, #logo4 {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 🔹 Ajustamos tamaños y reducimos la separación entre los logos */
+#logo2 { width: 260px; height: auto; top: calc(50% - 90px); }  /* ⬅️ Más grande y más cerca */
+#logo3 { width: 290px; height: auto; top: calc(50% - 180px); } /* ⬅️ Más grande y más cerca */
+#logo4 { width: 320px; height: auto; top: calc(50% - 270px); } /* ⬅️ Más grande y más cerca */
