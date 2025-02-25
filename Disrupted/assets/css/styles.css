@@ -1,41 +1,314 @@
-/* 🔹 Reset básico */
-* {
+/* 📌 Estilos generales */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+    background-color: #333333;
+    color: #ffffff;
+    padding-top: 70px; /* 📌 Para evitar que el header solape contenido */
 }
 
-/* 🔹 Contenedor de la animación */
-#logo-animation {
+/* 📌 Agregar fuentes personalizadas */
+@font-face {
+    font-family: 'Monument';
+    src: url('Disrupted/assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Neue Haas';
+    src: url('Disrupted/assets/fonts/NeueHaasGroteskText-Regular.woff2') format('woff2');
+}
+
+/* 📌 Aplicación de fuentes */
+h1, h2, .frase-impacto, .destacado {
+    font-family: 'Monument', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p, a, span {
+    font-family: 'Neue Haas', sans-serif;
+    font-weight: normal;
+}
+
+/* 📌 Barra de navegación */
+header {
+    background-color: #111;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 70px;
+}
+
+/* 📌 Contenedor de navegación */
+.nav-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+/* 📌 Logo */
+.nav-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#logo-btn img {
+    height: 30px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+/* 📌 Menú Hamburguesa */
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.menu-toggle {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #ffffff;
-    position: relative;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    z-index: 101;
 }
 
-/* 🔹 `BOX` Logo (logo1) - Se mantiene cuadrado y visible */
-#logo1 {
-    opacity: 0;
-    width: 230px;  /* ⬅️ Ajustamos ligeramente su tamaño */
-    height: 230px;
-    object-fit: cover;
-    position: relative;
-    z-index: 10;
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: 0.3s;
 }
 
-/* 🔹 Logos ocultos al inicio, más grandes y con menos separación */
-#logo2, #logo3, #logo4 {
-    opacity: 0;
+.nav-links {
+    display: none;
+    flex-direction: column;
     position: absolute;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
+    background: #111;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    width: 200px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 100;
 }
 
-/* 🔹 Ajustamos tamaños y reducimos la separación entre los logos */
-#logo2 { width: 260px; height: auto; top: calc(50% - 90px); }  /* ⬅️ Más grande y más cerca */
-#logo3 { width: 290px; height: auto; top: calc(50% - 180px); } /* ⬅️ Más grande y más cerca */
-#logo4 { width: 320px; height: auto; top: calc(50% - 270px); } /* ⬅️ Más grande y más cerca */
+.nav-links.active {
+    display: flex;
+}
+
+/* 📌 SECCIÓN HOME */
+#home {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* 📌 Logo en el Home */
+.overlay-logo {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 400px;
+    filter: invert(1);
+}
+
+.overlay-logo img {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* 📌 SECCIÓN QUIÉNES SOMOS + ESTADÍSTICAS */
+#quienes-estadisticas {
+    display: flex;
+    width: 100%;
+    background: linear-gradient(135deg, #fff, #f2f2f2);
+    color: #111111;
+    padding: 100px 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.quienes-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px;
+}
+
+/* 📌 Quiénes Somos */
+.quienes-texto {
+    flex: 1;
+    padding: 20px;
+}
+
+.quienes-texto h2 {
+    font-size: 3rem;
+    font-family: 'Monument', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border-left: 5px solid #444;
+    padding-left: 15px;
+    font-weight: 900;
+}
+
+/* 📌 Estadísticas */
+.estadisticas-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.estadisticas-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.estadistica img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.estadistica .cantidad {
+    font-size: 2.5rem;
+    font-family: 'Monument', sans-serif;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* 📌 SECCIÓN ROSTER */
+#roster {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.roster-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 📌 Grid del ROSTER */
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+/* 📌 Tarjetas de Influencers */
+.roster-item {
+    position: relative;
+    background: #111;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 550px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.roster-item:hover {
+    transform: scale(1.12);
+}
+
+/* 📌 Imágenes del ROSTER */
+.roster-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    background-color: #111;
+    max-height: 600px;
+    transition: filter 0.3s ease-in-out;
+}
+
+/* 📌 Capa Hover (Filtro translúcido + Mini BIO + Redes) */
+.roster-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* 🔹 Capa oscura translúcida */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+/* 📌 Mostrar la capa Hover al pasar el mouse */
+.roster-item:hover .roster-hover {
+    opacity: 1;
+}
+
+/* 📌 BIO del Influencer */
+.bio {
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Neue Haas', sans-serif;
+}
+
+/* 📌 Íconos de redes sociales */
+.roster-redes {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.roster-redes a img {
+    width: 30px; /* 🔹 Tamaño de los iconos */
+    transition: transform 0.3s ease-in-out;
+}
+
+.roster-redes a:hover img {
+    transform: scale(1.2);
+}
+

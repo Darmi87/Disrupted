@@ -3,27 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISRUPTED - Evolución del Logo</title>
-
-    <!-- Estilos -->
+    <title>DISRUPTED</title>
     <link rel="stylesheet" href="Disrupted/assets/css/styles.css">
-
-    <!-- GSAP para Animaciones -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
+    <header>
+        <div class="nav-container">
+            <!-- 📌 COLUMNA 1 - LOGO -->
+            <div class="nav-left">
+                <a href="#home" id="logo-btn">
+                    <img src="Disrupted/assets/images/DSRPTD.png" alt="DISRUPTED Logo">
+                </a>
+            </div>
 
-    <!-- Animación de Evolución del Logo -->
-    <div id="logo-animation">
-        <img id="logo1" src="Disrupted/assets/images/box.png" alt="BOX Logo">
-        <img id="logo2" src="Disrupted/assets/images/DD.png" alt="DD Logo">
-        <img id="logo3" src="Disrupted/assets/images/DSRPTD.png" alt="DSRPTD Logo">
-        <img id="logo4" src="Disrupted/assets/images/DISRUPTED.png" alt="DISRUPTED Logo">
+            <!-- 📌 COLUMNA 2 - Vacía para separación visual -->
+            <div class="nav-center"></div>
+
+            <!-- 📌 COLUMNA 3 - MENÚ HAMBURGUESA -->
+            <div class="nav-right">
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-links">
+                    <a href="#home">HOME</a>
+                    <a href="#quienes-somos">QUIÉNES SOMOS</a>
+                    <a href="#roster">ROSTER</a>
+                    <a href="#empresas">EMPRESAS</a>
+                    <a href="#contacto">CONTACTO</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 📌 SECCIÓN HOME (VIDEO A PANTALLA COMPLETA) -->
+    <section id="home">
+        <video autoplay muted loop id="home-video">
+            <source src="Disrupted/assets/videos/video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <div class="overlay-logo">
+            <img src="Disrupted/assets/images/boxlogo.png" alt="DISRUPTED Logo">
+        </div>
+    </section>
+
+    <!-- 📌 SECCIÓN QUIÉNES SOMOS + ESTADÍSTICAS EN DOS COLUMNAS -->
+<section id="quienes-estadisticas">
+    <div class="quienes-container">
+        <!-- 📌 COLUMNA IZQUIERDA: QUIÉNES SOMOS -->
+        <div class="quienes-texto">
+            <h2 data-aos="fade-right">¿QUIÉNES SOMOS?</h2>
+            <p data-aos="fade-up"><span>No somos una agencia de management común.</span></p>
+            <p data-aos="fade-up">Somos un equipo que <strong>vive y respira el contenido</strong>. Nos metemos en los procesos creativos de nuestros influencers, no solo para guiarlos, sino para <span>romper moldes y abrir nuevas perspectivas</span>.</p>
+            <p data-aos="fade-up">Hacemos más que representar talentos: <strong>construimos experiencias</strong>. Desde campañas hasta eventos presenciales y online, todo con un solo objetivo:</p>
+            <p class="frase-impacto" data-aos="zoom-in"><span>Conectar marcas con audiencias reales, de una manera que se sienta auténtica.</span></p>
+            <p class="bold" data-aos="fade-up">Si buscas lo de siempre, hay otras agencias para eso.</p>
+            <p class="bold destacado" data-aos="fade-up">Si buscas disrupción, bienvenido a <span>DISRUPTED.</span></p>
+        </div>
+
+        <!-- 📌 COLUMNA DERECHA: ESTADÍSTICAS -->
+        <div class="estadisticas-container">
+            <h2 data-aos="fade-left">NUESTRO ALCANCE</h2>
+            <div class="estadisticas-grid">
+                <!-- YOUTUBE -->
+                <div class="estadistica" data-aos="fade-up">
+                    <img src="Disrupted/assets/images/youtube.png" alt="YouTube">
+                    <p class="cantidad" data-target="50000000">10M</p>
+                    <span>Seguidores en YouTube</span>
+                </div>
+
+                <!-- INSTAGRAM -->
+                <div class="estadistica" data-aos="fade-up">
+                    <img src="Disrupted/assets/images/instagram.png" alt="Instagram">
+                    <p class="cantidad" data-target="30000000">10M</p>
+                    <span>Seguidores en Instagram</span>
+                </div>
+
+                <!-- TIKTOK -->
+                <div class="estadistica" data-aos="fade-up">
+                    <img src="Disrupted/assets/images/tiktok.png" alt="TikTok">
+                    <p class="cantidad" data-target="70000000">50M</p>
+                    <span>Seguidores en TikTok</span>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <!-- Scripts -->
-    <script src="Disrupted/assets/js/animation.js"></script>
 
+<!-- 📌 SECCIÓN ROSTER -->
+<section id="roster">
+    <div class="roster-container">
+        <h2>NUESTRO ROSTER</h2>
+        <div class="roster-grid">
+            <!-- 🔹 Influencer 1 - Yair (Ejemplo) -->
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Yair" class="roster-img">
+                <!-- 📌 Capa Hover con BIO y Redes -->
+                <div class="roster-hover">
+                    <p class="bio">Creador de contenido y streamer con pasión por los videojuegos y la cultura pop.</p>
+                    <div class="roster-redes">
+                        <a href="#" target="_blank"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#" target="_blank"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#" target="_blank"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Yair</p>
+            </div>
+
+            <!-- 🔹 Más influencers (Placeholder) -->
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Nombre" class="roster-img">
+                <div class="roster-hover">
+                    <p class="bio">Descripción breve del influencer.</p>
+                    <div class="roster-redes">
+                        <a href="#"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Nombre</p>
+            </div>
+
+            <!-- Repetir para más influencers -->
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Nombre" class="roster-img">
+                <div class="roster-hover">
+                    <p class="bio">Descripción breve del influencer.</p>
+                    <div class="roster-redes">
+                        <a href="#"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Nombre</p>
+            </div>
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Nombre" class="roster-img">
+                <div class="roster-hover">
+                    <p class="bio">Descripción breve del influencer.</p>
+                    <div class="roster-redes">
+                        <a href="#"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Nombre</p>
+            </div>
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Nombre" class="roster-img">
+                <div class="roster-hover">
+                    <p class="bio">Descripción breve del influencer.</p>
+                    <div class="roster-redes">
+                        <a href="#"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Nombre</p>
+            </div>
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Nombre" class="roster-img">
+                <div class="roster-hover">
+                    <p class="bio">Descripción breve del influencer.</p>
+                    <div class="roster-redes">
+                        <a href="#"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Nombre</p>
+            </div>
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Nombre" class="roster-img">
+                <div class="roster-hover">
+                    <p class="bio">Descripción breve del influencer.</p>
+                    <div class="roster-redes">
+                        <a href="#"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Nombre</p>
+            </div>
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Nombre" class="roster-img">
+                <div class="roster-hover">
+                    <p class="bio">Descripción breve del influencer.</p>
+                    <div class="roster-redes">
+                        <a href="#"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Nombre</p>
+            </div>
+            <div class="roster-item">
+                <img src="Disrupted/assets/images/yair.jpg" alt="Nombre" class="roster-img">
+                <div class="roster-hover">
+                    <p class="bio">Descripción breve del influencer.</p>
+                    <div class="roster-redes">
+                        <a href="#"><img src="Disrupted/assets/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="Disrupted/assets/icons/tiktok.svg" alt="TikTok"></a>
+                    </div>
+                </div>
+                <p>Nombre</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- 📌 SECCIÓN EMPRESAS -->
+    <section id="empresas">
+        <h2>Empresas que confiaron en nosotros</h2>
+        <p>Marcas con las que hemos trabajado.</p>
+    </section>
+
+    <!-- 📌 SECCIÓN CONTACTO -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Déjanos tu mensaje y te responderemos pronto.</p>
+    </section>
+
+    <!-- 📌 Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); // 📌 Inicializa AOS después de que la página cargue
+    </script>
+    <script src="Disrupted/assets/js/script.js"></script>
 </body>
 </html>
