@@ -172,30 +172,48 @@ header {
     gap: 50px;
 }
 
-/* 📌 Quiénes Somos */
+/* 📌 COLUMNA IZQUIERDA - QUIÉNES SOMOS */
 .quienes-texto {
     flex: 1;
-    padding: 20px;
+    padding: 30px; /* 🔹 Aumentamos el padding para mayor presencia */
 }
 
+/* 📌 TÍTULO "¿QUIÉNES SOMOS?" */
 .quienes-texto h2 {
-    font-size: 3rem;
+    font-size: 3.2rem; /* 🔹 Aumentamos un poco el tamaño del título */
     font-family: 'Monument', sans-serif;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border-left: 5px solid #444;
     padding-left: 15px;
     font-weight: 900;
 }
 
+/* 📌 Párrafos */
+.quienes-texto p {
+    font-size: 1.3rem; /* 🔹 Aumentamos el tamaño del texto */
+    font-family: 'Neue Haas', sans-serif;
+    line-height: 1.8; /* 🔹 Espaciado entre líneas para mayor legibilidad */
+    margin-bottom: 20px; /* 🔹 Más espacio entre párrafos */
+    color: #333333;
+}
+
+
 /* 📌 Estadísticas */
 .estadisticas-container {
     flex: 1;
     padding: 20px;
-    background-color: #111;
-    color: #fff;
+    background-color: rgb(31, 44, 223); /* 🔹 Azul personalizado */
+    color: white;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0px 4px 15px rgba(31, 44, 223, 0.3); /* 🔹 Sombra azul sutil */
+    transition: transform 0.3s;
+}
+
+/* 📌 Efecto hover */
+.estadisticas-container:hover {
+    transform: scale(1.02);
 }
 
 .estadisticas-grid {
@@ -204,16 +222,35 @@ header {
     align-items: center;
 }
 
-.estadistica img {
-    width: 60px;
-    margin-bottom: 10px;
+.estadistica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* 🔹 Reduce la separación entre LOGO, NÚMERO y TEXTO */
+    padding: 15px; /* 🔹 Mantiene una distancia prudente entre cada bloque */
 }
 
+/* 📌 Íconos de redes en estadísticas (invertidos a blanco) */
+.estadistica img {
+    width: 50px; /* 🔹 Ajustamos tamaño para mejor proporción */
+    filter: invert(1);
+    margin-bottom: 5px; /* 🔹 Reduce la separación con el número */
+}
+
+/* 📌 Números de estadísticas */
 .estadistica .cantidad {
-    font-size: 2.5rem;
+    font-size: 2rem; /* 🔹 Tamaño ligeramente reducido para mejor equilibrio */
     font-family: 'Monument', sans-serif;
     font-weight: bold;
-    color: #ffcc00;
+    color: rgb(255, 255, 255);
+    margin-bottom: 5px; /* 🔹 Menos espacio entre número y texto */
+}
+/* 📌 Texto debajo del número */
+.estadistica span {
+    font-size: 1rem;
+    color: #ffffff;
+    opacity: 0.8;
 }
 
 /* 📌 SECCIÓN ROSTER */
@@ -382,3 +419,96 @@ header {
     height: 100px; /* 🔹 Aumentamos la altura */
     object-fit: contain; /* 🔹 Mantiene la proporción */
 }
+/* 📌 SECCIÓN CONTACTO */
+#contacto {
+    width: 100%;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#contacto h2 {
+    font-size: 2.5rem;
+    font-family: 'Monument', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#contacto p {
+    font-size: 1.2rem;
+    font-family: 'Neue Haas', sans-serif;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+/* 📌 Contenedor del formulario */
+.contacto-container {
+    max-width: 600px;
+    margin: auto;
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* 📌 Grupo de input */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* 📌 Inputs y Textarea */
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #555;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    outline: none;
+    transition: border-bottom 0.3s;
+}
+
+/* 📌 Labels flotantes */
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #777;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+/* 📌 Efecto al escribir */
+.input-group input:focus ~ label,
+.input-group textarea:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:valid ~ label {
+    top: -12px;
+    font-size: 0.9rem;
+    color: #ffcc00;
+}
+
+/* 📌 Botón de enviar */
+.btn-enviar {
+    width: 100%;
+    background: rgb(213, 35, 27); /* 🔹 Rojo personalizado */
+    color: rgb(255, 255, 255); /* 🔹 Texto blanco */
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-family: 'Monument', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* 📌 Efecto hover */
+.btn-enviar:hover {
+    background: rgb(190, 30, 25); /* 🔹 Un rojo más oscuro en hover */
+    transform: scale(1.05);
+}
+
