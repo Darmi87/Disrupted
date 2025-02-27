@@ -1,14 +1,18 @@
-/* 📌 Estilos generales */
+/* 
+   =========================================
+   ============ ESTILOS GENERALES ==========
+   =========================================
+*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #333333;
-    color: #ffffff;
-    padding-top: 70px; /* 📌 Para evitar que el header solape contenido */
+    background-color: #333;
+    color: #fff;
+    padding-top: 70px; /* Evita que el header solape contenido */
 }
 
-/* 📌 Agregar fuentes personalizadas */
+/* Fuentes personalizadas */
 @font-face {
     font-family: 'Monument';
     src: url('Disrupted/assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
@@ -19,7 +23,7 @@ body {
     src: url('Disrupted/assets/fonts/NeueHaasGroteskText-Regular.woff2') format('woff2');
 }
 
-/* 📌 Aplicación de fuentes */
+/* Aplicación de fuentes */
 h1, h2, .frase-impacto, .destacado {
     font-family: 'Monument', sans-serif;
     font-weight: bold;
@@ -31,7 +35,11 @@ p, a, span {
     font-weight: normal;
 }
 
-/* 📌 Barra de navegación */
+/* 
+   =========================================
+   ============ BARRA DE NAVEGACIÓN ========
+   =========================================
+*/
 header {
     background-color: #111;
     position: fixed;
@@ -44,7 +52,6 @@ header {
     height: 70px;
 }
 
-/* 📌 Contenedor de navegación */
 .nav-container {
     display: flex;
     width: 100%;
@@ -54,7 +61,7 @@ header {
     padding: 10px 40px;
 }
 
-/* 📌 Logo */
+/* Logo */
 .nav-left {
     flex: 1;
     display: flex;
@@ -67,7 +74,7 @@ header {
     filter: brightness(0) invert(1);
 }
 
-/* 📌 Menú Hamburguesa */
+/* Menú Hamburguesa */
 .nav-right {
     flex: 1;
     display: flex;
@@ -75,17 +82,21 @@ header {
     position: relative;
 }
 
+/* 📌 Botón de Menú (Hamburguesa) */
 .menu-toggle {
+    position: fixed; 
+    top: 20px;  
+    right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     background: none;
     border: none;
     width: 40px;
     height: 40px;
-    z-index: 101;
+    z-index: 300;
+    cursor: pointer;
 }
 
 .menu-toggle span {
@@ -97,27 +108,84 @@ header {
     transition: 0.3s;
 }
 
+/* 📌 Efecto "X" */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 📌 Menú Fullscreen */
 .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #111;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: left;
-    width: 200px;
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 100;
-}
-
-.nav-links.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 250;
+    pointer-events: none;
+}
+/* 📌 Mostrar menú cuando está activo */
+.nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
-/* 📌 SECCIÓN HOME */
+/* 📌 Estilos de los enlaces */
+.nav-links a {
+    font-family: 'Monument', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* 📌 Hover en enlaces */
+.nav-links a:hover {
+    color: rgb(213, 35, 27);
+    transform: scale(1.1);
+}
+
+/* 📌 Botón "X" para cerrar */
+.close-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-menu:hover {
+    transform: scale(1.1);
+    color: rgb(213, 35, 27);
+}
+
+
+
+/* 
+   =========================================
+   ========== SECCIÓN HOME =================
+   =========================================
+*/
 #home {
     position: relative;
     width: 100%;
@@ -138,28 +206,30 @@ header {
     z-index: -1;
 }
 
-/* 📌 Boxlogo alineado a la izquierda y centrado verticalmente */
+/* Boxlogo alineado a la izquierda y centrado verticalmente */
 .overlay-logo {
     position: absolute;
-    top: 50%; /* 📌 Centrado vertical */
-    left: 5%; /* 📌 Se mantiene alineado a la izquierda */
-    transform: translateY(-50%); /* 📌 Ajuste fino */
-    width: 650px; /* 🔹 AUMENTAMOS EL TAMAÑO */
-    filter: invert(1); /* 🔹 Mantiene el color blanco */
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 650px;
+    filter: invert(1);
 }
-
 .overlay-logo img {
     width: 100%;
-    max-width: 700px; /* 🔹 Tamaño máximo para pantallas grandes */
+    max-width: 700px;
 }
 
-
-/* 📌 SECCIÓN QUIÉNES SOMOS + ESTADÍSTICAS */
+/* 
+   =========================================
+   == SECCIÓN QUIÉNES SOMOS + ESTADÍSTICAS =
+   =========================================
+*/
 #quienes-estadisticas {
     display: flex;
     width: 100%;
     background: linear-gradient(135deg, #fff, #f2f2f2);
-    color: #111111;
+    color: #111;
     padding: 100px 20px;
     align-items: center;
     justify-content: center;
@@ -172,15 +242,14 @@ header {
     gap: 50px;
 }
 
-/* 📌 COLUMNA IZQUIERDA - QUIÉNES SOMOS */
+/* Columna Izquierda (Quiénes Somos) */
 .quienes-texto {
     flex: 1;
-    padding: 30px; /* 🔹 Aumentamos el padding para mayor presencia */
+    padding: 30px;
 }
 
-/* 📌 TÍTULO "¿QUIÉNES SOMOS?" */
 .quienes-texto h2 {
-    font-size: 3.2rem; /* 🔹 Aumentamos un poco el tamaño del título */
+    font-size: 3.2rem;
     font-family: 'Monument', sans-serif;
     letter-spacing: 2px;
     margin-bottom: 25px;
@@ -189,29 +258,25 @@ header {
     font-weight: 900;
 }
 
-/* 📌 Párrafos */
 .quienes-texto p {
-    font-size: 1.3rem; /* 🔹 Aumentamos el tamaño del texto */
+    font-size: 1.3rem;
     font-family: 'Neue Haas', sans-serif;
-    line-height: 1.8; /* 🔹 Espaciado entre líneas para mayor legibilidad */
-    margin-bottom: 20px; /* 🔹 Más espacio entre párrafos */
-    color: #333333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-
-/* 📌 Estadísticas */
+/* Contenedor de Estadísticas */
 .estadisticas-container {
     flex: 1;
     padding: 20px;
-    background-color: rgb(31, 44, 223); /* 🔹 Azul personalizado */
+    background-color: rgb(31, 44, 223);
     color: white;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0px 4px 15px rgba(31, 44, 223, 0.3); /* 🔹 Sombra azul sutil */
+    box-shadow: 0px 4px 15px rgba(31, 44, 223, 0.3);
     transition: transform 0.3s;
 }
-
-/* 📌 Efecto hover */
 .estadisticas-container:hover {
     transform: scale(1.02);
 }
@@ -227,37 +292,39 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px; /* 🔹 Reduce la separación entre LOGO, NÚMERO y TEXTO */
-    padding: 15px; /* 🔹 Mantiene una distancia prudente entre cada bloque */
+    gap: 5px;
+    padding: 15px;
 }
 
-/* 📌 Íconos de redes en estadísticas (invertidos a blanco) */
+/* Íconos de redes en estadísticas (invertidos a blanco) */
 .estadistica img {
-    width: 50px; /* 🔹 Ajustamos tamaño para mejor proporción */
+    width: 50px;
     filter: invert(1);
-    margin-bottom: 5px; /* 🔹 Reduce la separación con el número */
+    margin-bottom: 5px;
 }
 
-/* 📌 Números de estadísticas */
+/* Números de estadísticas */
 .estadistica .cantidad {
-    font-size: 2.5rem; /* 🔹 Ajustado para mejor presencia */
-    font-family: 'Monument', sans-serif; /* 🔹 Aplica la fuente Monument */
+    font-size: 2.5rem;
+    font-family: 'Monument', sans-serif;
     font-weight: bold;
-    color: rgb(255, 255, 255);
-    margin-bottom: 5px; /* 🔹 Menos espacio entre número y texto */
+    color: #fff;
+    margin-bottom: 5px;
 }
 
-/* 📌 Texto debajo del número */
+/* Texto debajo del número */
 .estadistica span {
     font-size: 1rem;
-    font-family: 'Neue Haas', sans-serif; /* 🔹 Fuente para el texto descriptivo */
-    font-weight: normal;
-    color: #ffffff;
+    font-family: 'Neue Haas', sans-serif;
+    color: #fff;
     opacity: 0.8;
 }
 
-
-/* 📌 SECCIÓN ROSTER */
+/* 
+   =========================================
+   ============== SECCIÓN ROSTER ===========
+   =========================================
+*/
 #roster {
     width: 100%;
     background-color: #000;
@@ -271,7 +338,7 @@ header {
     margin: 0 auto;
 }
 
-/* 📌 Grid del ROSTER */
+/* Grid del ROSTER */
 .roster-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -279,7 +346,7 @@ header {
     justify-content: center;
 }
 
-/* 📌 Tarjetas de Influencers */
+/* Tarjetas de Influencers */
 .roster-item {
     position: relative;
     background: #111;
@@ -300,7 +367,7 @@ header {
     margin-top: 10px;
 }
 
-/* 📌 Imágenes del ROSTER */
+/* Imágenes del ROSTER */
 .roster-img {
     width: 100%;
     height: auto;
@@ -311,7 +378,7 @@ header {
     transition: filter 0.3s ease-in-out;
 }
 
-/* 📌 Capa Hover (Filtro translúcido + Mini BIO + Redes) */
+/* Capa Hover (filtro translúcido + bio + redes) */
 .roster-hover {
     position: absolute;
     top: 0;
@@ -321,7 +388,7 @@ header {
     background: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* 📌 Alinea la BIO en la parte superior */
+    justify-content: flex-start; 
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -330,12 +397,12 @@ header {
     box-sizing: border-box;
 }
 
-/* 📌 Mostrar la capa Hover al pasar el mouse */
+/* Mostrar hover al pasar el mouse */
 .roster-item:hover .roster-hover {
     opacity: 1;
 }
 
-/* 📌 BIO del Influencer */
+/* BIO del Influencer */
 .bio {
     font-size: 1.2rem;
     color: #fff;
@@ -345,44 +412,42 @@ header {
     width: 100%;
     max-width: 90%;
     box-sizing: border-box;
-    margin-bottom: auto; /* 📌 Empuja el texto hacia arriba */
+    margin-bottom: auto; 
 }
 
-/* 📌 Íconos de redes sociales en la parte inferior derecha */
+/* Íconos de redes sociales en la parte inferior derecha */
 .roster-redes {
     position: absolute;
-    bottom: 15px; /* 📌 Espacio desde el borde inferior */
-    right: 15px; /* 📌 Alineado a la derecha */
+    bottom: 15px;
+    right: 15px;
     display: flex;
     gap: 10px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* 📌 Mostrar los íconos de redes sociales en el hover */
+/* Mostrar iconos en hover */
 .roster-item:hover .roster-redes {
     opacity: 1;
 }
 
-/* 📌 Íconos de redes sociales (con inversión de color) */
+/* Íconos de redes (con inversión) */
 .roster-redes a img {
-    width: 30px; /* 🔹 Tamaño uniforme */
+    width: 30px;
     height: 30px;
     transition: transform 0.3s ease-in-out;
-    filter: invert(1); /* 🔹 Invierte los colores de los logos */
+    filter: invert(1);
 }
 
-/* 📌 Efecto hover en íconos de redes */
 .roster-redes a:hover img {
     transform: scale(1.2);
 }
 
-
-
-
-
-
-/* 📌 SECCIÓN EN CONSTRUCCIÓN */
+/* 
+   =========================================
+   ======= SECCIÓN EN CONSTRUCCIÓN =========
+   =========================================
+*/
 #en-construccion {
     width: 100%;
     height: 100vh;
@@ -396,7 +461,6 @@ header {
     padding: 20px;
 }
 
-/* 📌 Imagen */
 .construccion-container img {
     width: 80%;
     max-width: 600px;
@@ -404,7 +468,6 @@ header {
     margin-bottom: 20px;
 }
 
-/* 📌 Texto */
 .construccion-container h2 {
     font-size: 2rem;
     font-family: 'Monument', sans-serif;
@@ -417,27 +480,31 @@ header {
     font-family: 'Neue Haas', sans-serif;
     color: #ccc;
 }
-/* 📌 SECCIÓN EMPRESAS */
+
+/* 
+   =========================================
+   ============ SECCIÓN EMPRESAS ===========
+   =========================================
+*/
 #empresas {
     width: 100%;
-    background-color: #111; /* 🔹 Fondo oscuro */
+    background-color: #111;
     color: white;
     text-align: center;
     padding: 80px 20px;
 }
 
-/* 📌 Contenedor del grid */
 .empresas-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 🔹 Más espacio por logo */
-    gap: 50px; /* 🔹 Más separación entre logos */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: auto;
 }
 
-/* 📌 Tarjetas de empresas */
+/* Tarjetas de empresas */
 .empresa {
     display: flex;
     justify-content: center;
@@ -445,13 +512,18 @@ header {
     padding: 15px;
 }
 
-/* 📌 Logos de empresas */
+/* Logos de empresas */
 .empresa img {
-    width: 180px; /* 🔹 Aumentamos el ancho */
-    height: 100px; /* 🔹 Aumentamos la altura */
-    object-fit: contain; /* 🔹 Mantiene la proporción */
+    width: 180px;
+    height: 100px;
+    object-fit: contain;
 }
-/* 📌 SECCIÓN CONTACTO */
+
+/* 
+   =========================================
+   ========= SECCIÓN CONTACTO ==============
+   =========================================
+*/
 #contacto {
     width: 100%;
     background-color: #111;
@@ -474,7 +546,7 @@ header {
     margin-bottom: 40px;
 }
 
-/* 📌 Contenedor del formulario */
+/* Contenedor del formulario */
 .contacto-container {
     max-width: 600px;
     margin: auto;
@@ -484,13 +556,13 @@ header {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
-/* 📌 Grupo de input */
+/* Grupo de input */
 .input-group {
     position: relative;
     margin-bottom: 30px;
 }
 
-/* 📌 Inputs y Textarea */
+/* Inputs y Textarea */
 .input-group input,
 .input-group textarea {
     width: 100%;
@@ -504,7 +576,7 @@ header {
     transition: border-bottom 0.3s;
 }
 
-/* 📌 Labels flotantes */
+/* Labels flotantes */
 .input-group label {
     position: absolute;
     top: 10px;
@@ -514,7 +586,7 @@ header {
     font-size: 1rem;
 }
 
-/* 📌 Efecto al escribir */
+/* Efecto al escribir */
 .input-group input:focus ~ label,
 .input-group textarea:focus ~ label,
 .input-group input:valid ~ label,
@@ -524,11 +596,11 @@ header {
     color: #ffcc00;
 }
 
-/* 📌 Botón de enviar */
+/* Botón de enviar */
 .btn-enviar {
     width: 100%;
-    background: rgb(213, 35, 27); /* 🔹 Rojo personalizado */
-    color: rgb(255, 255, 255); /* 🔹 Texto blanco */
+    background: rgb(213, 35, 27);
+    color: rgb(255, 255, 255);
     border: none;
     padding: 15px;
     font-size: 1.2rem;
@@ -538,22 +610,24 @@ header {
     transition: background 0.3s, transform 0.2s;
 }
 
-/* 📌 Efecto hover */
 .btn-enviar:hover {
-    background: rgb(190, 30, 25); /* 🔹 Un rojo más oscuro en hover */
+    background: rgb(190, 30, 25);
     transform: scale(1.05);
 }
 
-/* 📌 FOOTER */
+/* 
+   =========================================
+   ================ FOOTER =================
+   =========================================
+*/
 #footer {
     width: 100%;
-    background-color: #111; /* 🔹 Fondo oscuro */
+    background-color: #111;
     color: white;
     text-align: center;
     padding: 40px 20px;
 }
 
-/* 📌 Contenedor del Footer */
 .footer-container {
     display: flex;
     justify-content: space-between;
@@ -563,42 +637,41 @@ header {
     flex-wrap: wrap;
 }
 
-/* 📌 Izquierda - Logo y Disclaimer en línea */
+/* Izquierda - Logo y Disclaimer */
 .footer-left {
     display: flex;
-    align-items: center; /* 🔹 Alinea en la misma línea */
-    gap: 10px; /* 🔹 Espacio entre el logo y el texto */
+    align-items: center;
+    gap: 10px;
 }
 
-/* 📌 Tamaño del logo */
+/* Logo Footer */
 .footer-left img {
-    width: 100px; /* 🔹 Ajusta según sea necesario */
-    filter: invert(1); /* 🔹 Hace el logo blanco */
+    width: 100px;
+    filter: invert(1);
 }
 
-/* 📌 Disclaimer legal */
+/* Disclaimer legal */
 .footer-legal {
     font-size: 0.9rem;
     color: #ccc;
     margin: 0;
 }
 
-/* 📌 Derecha - Redes Sociales */
+/* Derecha - Redes Sociales */
 .footer-right {
     display: flex;
     gap: 20px;
 }
 
-/* 📌 Íconos de redes sociales (tamaño uniforme e invertidos a blanco) */
 .footer-right a img {
-    width: 35px; /* 🔹 Tamaño uniforme para todos los logos */
-    height: 35px; /* 🔹 Asegura que todos sean cuadrados */
-    filter: invert(1); /* 🔹 Invierte los colores a blanco */
+    width: 35px;
+    height: 35px;
+    filter: invert(1);
     transition: transform 0.3s ease-in-out;
 }
 
-/* 📌 Efecto hover (aumenta ligeramente el tamaño) */
 .footer-right a:hover img {
     transform: scale(1.2);
 }
+
 

@@ -1,311 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISRUPTED</title>
-    <link rel="stylesheet" href="Disrupted/assets/css/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISRUPTED</title>
+  <link rel="stylesheet" href="Disrupted/assets/css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <!-- 📌 COLUMNA 1 - LOGO -->
+            <!-- 📌 Logo -->
             <div class="nav-left">
                 <a href="#home" id="logo-btn">
                     <img src="Disrupted/assets/images/DSRPTD.png" alt="DISRUPTED Logo">
                 </a>
             </div>
-
-            <!-- 📌 COLUMNA 2 - Vacía para separación visual -->
-            <div class="nav-center"></div>
-
-            <!-- 📌 COLUMNA 3 - MENÚ HAMBURGUESA -->
-            <div class="nav-right">
-                <button class="menu-toggle" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <div class="nav-links">
-                    <a href="#home">HOME</a>
-                    <a href="#quienes-somos">QUIÉNES SOMOS</a>
-                    <a href="#roster">ROSTER</a>
-                    <a href="#empresas">EMPRESAS</a>
-                    <a href="#contacto">CONTACTO</a>
-                </div>
+    
+            <!-- 📌 Menú Hamburguesa -->
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <!-- 📌 Menú Fullscreen -->
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#quienes-estadisticas">Quiénes Somos</a>
+                <a href="#roster">Roster</a>
+                <a href="#contacto">Contacto</a>
             </div>
         </div>
     </header>
+    
 
-    <!-- 📌 SECCIÓN HOME (VIDEO A PANTALLA COMPLETA) -->
-    <section id="home">
-        <video autoplay muted loop id="home-video">
-            <source src="Disrupted/assets/videos/video.mp4" type="video/mp4">
-            Tu navegador no soporta el video.
-        </video>
-        <div class="overlay-logo">
-            <img src="Disrupted/assets/images/boxlogo.png" alt="DISRUPTED Logo">
-        </div>
-        
-    </section>
+  <!-- SECCIÓN HOME (VIDEO) -->
+  <section id="home">
+    <video autoplay muted loop id="home-video">
+      <source src="Disrupted/assets/videos/video.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+    <div class="overlay-logo">
+      <img src="Disrupted/assets/images/boxlogo.png" alt="DISRUPTED Logo">
+    </div>
+  </section>
 
-    <!-- 📌 SECCIÓN SOMOS DISRUPTED + ESTADÍSTICAS EN DOS COLUMNAS -->
-<section id="quienes-estadisticas">
+  <!-- SECCIÓN QUIÉNES SOMOS + ESTADÍSTICAS -->
+  <section id="quienes-estadisticas">
     <div class="quienes-container">
-        <!-- 📌 COLUMNA IZQUIERDA: TEXTO SOMOS DISRUPTED -->
-        <div class="quienes-texto">
-            <h2 data-aos="fade-right">SOMOS DISRUPTED.</h2>
-            <p data-aos="fade-up">Un concepto nuevo, con años de experiencia. <strong>No solo representamos influencers, construimos creatividad.</strong></p>
-            <p data-aos="fade-up">Nos metemos en cada proceso, empujamos ideas al límite y hacemos que cada creador <span>explote su máximo potencial.</span></p>
-            <p data-aos="fade-up">Cuando colaboramos con una marca, <strong>no buscamos cumplir con una campaña, sino crear algo que marque la diferencia.</strong></p>
-            <p class="frase-impacto" data-aos="zoom-in">Dicen que <span>"loco es el que hace siempre lo mismo y espera resultados diferentes."</span></p>
-            <p class="bold destacado" data-aos="fade-up">Nosotros <span>preferimos hacerlo distinto.</span> Y sí, <span>estamos un poco locos.</span></p>
+      <!-- COLUMNA IZQUIERDA: SOMOS DISRUPTED -->
+      <div class="quienes-texto">
+        <h2 data-aos="fade-right">SOMOS DISRUPTED.</h2>
+        <p data-aos="fade-up">Un concepto nuevo, con años de experiencia. <strong>No solo representamos influencers, construimos creatividad.</strong></p>
+        <p data-aos="fade-up">Nos metemos en cada proceso, empujamos ideas al límite y hacemos que cada creador <span>explote su máximo potencial.</span></p>
+        <p data-aos="fade-up">Cuando colaboramos con una marca, <strong>no buscamos cumplir con una campaña, sino crear algo que marque la diferencia.</strong></p>
+        <p class="frase-impacto" data-aos="zoom-in">Dicen que <span>"loco es el que hace siempre lo mismo y espera resultados diferentes."</span></p>
+        <p class="bold destacado" data-aos="fade-up">Nosotros <span>preferimos hacerlo distinto.</span> Y sí, <span>estamos un poco locos.</span></p>
+      </div>
+
+      <!-- COLUMNA DERECHA: ESTADÍSTICAS -->
+      <div class="estadisticas-container" data-aos="fade-left">
+        <h2>NUESTRO ALCANCE</h2>
+        <div class="estadisticas-grid">
+          <!-- YOUTUBE -->
+          <div class="estadistica" data-aos="fade-up">
+            <img src="Disrupted/assets/images/youtube.png" alt="YouTube">
+            <p class="cantidad" data-target="50000000">+70M</p>
+            <span>Seguidores en YouTube</span>
+          </div>
+
+          <!-- INSTAGRAM -->
+          <div class="estadistica" data-aos="fade-up">
+            <img src="Disrupted/assets/images/insta.png" alt="Instagram">
+            <p class="cantidad" data-target="30000000">+60M</p>
+            <span>Seguidores en Instagram</span>
+          </div>
+
+          <!-- TIKTOK -->
+          <div class="estadistica" data-aos="fade-up">
+            <img src="Disrupted/assets/images/tiktok.png" alt="TikTok">
+            <p class="cantidad" data-target="70000000">+80M</p>
+            <span>Seguidores en TikTok</span>
+          </div>
         </div>
-
-        <!-- 📌 COLUMNA DERECHA: ESTADÍSTICAS -->
-        <div class="estadisticas-container">
-            <h2 data-aos="fade-left">NUESTRO ALCANCE</h2>
-            <div class="estadisticas-grid">
-                <!-- YOUTUBE -->
-                <div class="estadistica" data-aos="fade-up">
-                    <img src="Disrupted/assets/images/youtube.png" alt="YouTube">
-                    <p class="cantidad" data-target="50000000">+70M</p>
-                    <span>Seguidores en YouTube</span>
-                </div>
-
-                <!-- INSTAGRAM -->
-                <div class="estadistica" data-aos="fade-up">
-                    <img src="Disrupted/assets/images/insta.png" alt="Instagram">
-                    <p class="cantidad" data-target="30000000">+60M</p>
-                    <span>Seguidores en Instagram</span>
-                </div>
-
-                <!-- TIKTOK -->
-                <div class="estadistica" data-aos="fade-up">
-                    <img src="Disrupted/assets/images/tiktok.png" alt="TikTok">
-                    <p class="cantidad" data-target="70000000">+80M</p>
-                    <span>Seguidores en TikTok</span>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-
-<!-- 📌 SECCIÓN ROSTER -->
-<section id="roster">
+  <!-- SECCIÓN ROSTER -->
+  <section id="roster">
     <div class="roster-container">
-        <h2>NUESTRO ROSTER</h2>
-        <div class="roster-grid">
-            <!-- 🔹 1. Yair -->
-<div class="roster-item">
-    <img src="Disrupted/assets/images/Yair.jpg" alt="Yair" class="roster-img">
-    <div class="roster-hover">
-        <p class="bio"><strong>Yair17</strong> es un creador de contenido mexicano y <span class="resaltado">referente del gaming</span>, conocido por su <span class="resaltado">carisma</span>, videos entretenidos y <span class="resaltado">pasión por los videojuegos</span>. 🎮🔥</p>
-        <div class="roster-redes">
-            <a href="https://www.youtube.com/@Yair17" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
-            <a href="https://www.instagram.com/yair17yt/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@yair17yt__" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
-        </div>
-    </div>
-    <p>Yair</p>
-</div>
-
-<!-- 🔹 2. Barbie PVM -->
-<div class="roster-item">
-    <img src="Disrupted/assets/images/barbie.jpg" alt="Barbie PVM" class="roster-img">
-    <div class="roster-hover">
-        <p class="bio"><strong>Barbie PVM</strong> es una <span class="resaltado">creadora de contenido mexicana</span> con millones de seguidores, destacada por su <span class="resaltado">carisma</span>, <span class="resaltado">creatividad</span> y su <span class="resaltado">nueva etapa musical</span>. 🎶✨</p>
-        <div class="roster-redes">
-            <a href="https://www.youtube.com/@Babimtz" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
-            <a href="https://www.instagram.com/barbie.pvmx/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@barbie.pvm" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
-        </div>
-    </div>
-    <p>Barbie PVM</p>
-</div>
-
-<!-- 🔹 3. Antrax -->
-<div class="roster-item">
-    <img src="Disrupted/assets/images/antrax.jpg" alt="Antrax" class="roster-img">
-    <div class="roster-hover">
-        <p class="bio"><strong>Antrax</strong> es un <span class="resaltado">YouTuber mexicano</span> con millones de seguidores, destacado por su <span class="resaltado">creatividad</span> y su paso por <span class="resaltado">Art Attack, Disney y MasterChef</span>. 🎥🔥</p>
-        <div class="roster-redes">
-            <a href="https://www.youtube.com/@antrax" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
-            <a href="https://www.instagram.com/yosoyantrax/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@yosoyantrax" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
-        </div>
-    </div>
-    <p>Antrax</p>
-</div>
-
-<!-- 🔹 4. DanyanCat -->
-<div class="roster-item">
-    <img src="Disrupted/assets/images/danyan.jpg" alt="DanyanCat" class="roster-img">
-    <div class="roster-hover">
-        <p class="bio"><strong>DanyanCat</strong> es una <span class="resaltado">creadora de contenido mexicana</span>, destacada en <span class="resaltado">videojuegos, cosplay y modelaje</span>, combinando <span class="resaltado">talento, carisma y creatividad</span> en cada proyecto. 🎮✨</p>
-        <div class="roster-redes">
-            <a href="https://www.youtube.com/@DanyanCatGaming" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
-            <a href="https://www.instagram.com/danyancatsq/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@danyancat" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
-        </div>
-    </div>
-    <p>DanyanCat</p>
-</div>
-
-<!-- 🔹 5. Josue07 -->
-<div class="roster-item">
-    <img src="Disrupted/assets/images/josue2.jpg" alt="Josue07" class="roster-img">
-    <div class="roster-hover">
-        <p class="bio"><strong>Josue07</strong> es un <span class="resaltado">creador de contenido mexicano</span>, conocido por su <span class="resaltado">carisma</span> y <span class="resaltado">humor</span> en videos de gaming y entretenimiento. <span class="resaltado">Las risas no faltarán</span>. 😂🎮</p>
-        <div class="roster-redes">
-            <a href="https://www.youtube.com/@Josue07Broders" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
-            <a href="https://www.instagram.com/josue07_yt/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@josue07broders" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
-        </div>
-    </div>
-    <p>Josue07</p>
-</div>
-
-<!-- 🔹 6. Aldo De Nigris -->
-<div class="roster-item">
-    <img src="Disrupted/assets/images/aldo.jpg" alt="Aldo De Nigris" class="roster-img">
-    <div class="roster-hover">
-        <p class="bio"><strong>Aldo T de Nigris</strong> es un <span class="resaltado">creador de contenido y atleta mexicano</span>, combinando <span class="resaltado">humor, entrenamiento y pasión por el fútbol</span>. ⚽🔥</p>
-        <div class="roster-redes">
-            <a href="https://www.youtube.com/@MasAllaDelFierro" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
-            <a href="https://www.instagram.com/aldotdenigris/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@aldotdenigris2?lang=es" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
-        </div>
-    </div>
-    <p>Aldo De Nigris</p>
-</div>
-
-<!-- 🔹 7. Juan de Dios G -->
-<div class="roster-item">
-    <img src="Disrupted/assets/images/juan.jpg" alt="Juan de Dios G" class="roster-img">
-    <div class="roster-hover">
-        <p class="bio"><strong>Juan de Dios García</strong> es un <span class="resaltado">creador de contenido mexicano</span> que arrasa en redes con <span class="resaltado">comedia, baile y buena vibra</span>. Siempre sacando risas. 😂🔥</p>
-        <div class="roster-redes"> 
-            <a href="https://www.instagram.com/juanddiosg/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@juanddiosgg?lang=es" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
-        </div>
-    </div>
-    <p>Juan de Dios G</p>
-</div>
-
-<!-- 🔹 8. Yetus -->
-<div class="roster-item">
-    <img src="Disrupted/assets/images/yetus.jpg" alt="Yetus" class="roster-img">
-    <div class="roster-hover">
-        <p class="bio"><strong>Yetus Prime</strong> es un <span class="resaltado">creador de contenido y atleta mexicano</span>, combinando <span class="resaltado">fitness, disciplina y adrenalina</span>, pero siempre con <span class="resaltado">muchísimo humor</span>. 💪😂🔥</p>
-        <div class="roster-redes">
-            <a href="https://www.youtube.com/@MasAllaDelFierro" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
-            <a href="https://www.instagram.com/yetus_prime/" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@yetusprime777" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
-        </div>
-    </div>
-    <p>Yetus</p>
-</div>
-
-            <!-- 📌 9. Botón VER MÁS -->
-            <div class="roster-item ver-mas">
-                <a href="roster.html">
-                    <img src="Disrupted/assets/images/iconred.png" alt="Ver Más" class="roster-img">
-                    <div class="ver-mas-text-container">
-                        <p class="ver-mas-text">VER MÁS</p>
-                    </div>
-                </a>
+      <h2>NUESTRO ROSTER</h2>
+      <div class="roster-grid">
+        <!-- 1. Yair -->
+        <div class="roster-item">
+          <img src="Disrupted/assets/images/Yair.jpg" alt="Yair" class="roster-img">
+          <div class="roster-hover">
+            <p class="bio">
+              <strong>Yair17</strong> es un creador de contenido mexicano y <span class="resaltado">referente del gaming</span>, 
+              conocido por su <span class="resaltado">carisma</span>, videos entretenidos y 
+              <span class="resaltado">pasión por los videojuegos</span>. 🎮🔥
+            </p>
+            <div class="roster-redes">
+              <a href="https://www.youtube.com/@Yair17" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
+              <a href="https://www.instagram.com/yair17yt/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@yair17yt__" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
             </div>
-
+          </div>
+          <p>Yair</p>
         </div>
+
+        <!-- 2. Barbie PVM -->
+        <div class="roster-item">
+          <img src="Disrupted/assets/images/barbie.jpg" alt="Barbie PVM" class="roster-img">
+          <div class="roster-hover">
+            <p class="bio">
+              <strong>Barbie PVM</strong> es una <span class="resaltado">creadora de contenido mexicana</span> con millones de seguidores, 
+              destacada por su <span class="resaltado">carisma</span>, <span class="resaltado">creatividad</span> 
+              y su <span class="resaltado">nueva etapa musical</span>. 🎶✨
+            </p>
+            <div class="roster-redes">
+              <a href="https://www.youtube.com/@Babimtz" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
+              <a href="https://www.instagram.com/barbie.pvmx/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@barbie.pvm" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
+            </div>
+          </div>
+          <p>Barbie PVM</p>
+        </div>
+
+        <!-- 3. Antrax -->
+        <div class="roster-item">
+          <img src="Disrupted/assets/images/antrax.jpg" alt="Antrax" class="roster-img">
+          <div class="roster-hover">
+            <p class="bio">
+              <strong>Antrax</strong> es un <span class="resaltado">YouTuber mexicano</span> con millones de seguidores, 
+              destacado por su <span class="resaltado">creatividad</span> y su paso por 
+              <span class="resaltado">Art Attack, Disney y MasterChef</span>. 🎥🔥
+            </p>
+            <div class="roster-redes">
+              <a href="https://www.youtube.com/@antrax" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
+              <a href="https://www.instagram.com/yosoyantrax/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@yosoyantrax" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
+            </div>
+          </div>
+          <p>Antrax</p>
+        </div>
+
+        <!-- 4. DanyanCat -->
+        <div class="roster-item">
+          <img src="Disrupted/assets/images/danyan.jpg" alt="DanyanCat" class="roster-img">
+          <div class="roster-hover">
+            <p class="bio">
+              <strong>DanyanCat</strong> es una <span class="resaltado">creadora de contenido mexicana</span>, destacada en 
+              <span class="resaltado">videojuegos, cosplay y modelaje</span>, combinando 
+              <span class="resaltado">talento, carisma y creatividad</span> en cada proyecto. 🎮✨
+            </p>
+            <div class="roster-redes">
+              <a href="https://www.youtube.com/@DanyanCatGaming" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
+              <a href="https://www.instagram.com/danyancatsq/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@danyancat" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
+            </div>
+          </div>
+          <p>DanyanCat</p>
+        </div>
+
+        <!-- 5. Josue07 -->
+        <div class="roster-item">
+          <img src="Disrupted/assets/images/josue2.jpg" alt="Josue07" class="roster-img">
+          <div class="roster-hover">
+            <p class="bio">
+              <strong>Josue07</strong> es un <span class="resaltado">creador de contenido mexicano</span>, 
+              conocido por su <span class="resaltado">carisma</span> y <span class="resaltado">humor</span> 
+              en videos de gaming y entretenimiento. <span class="resaltado">Las risas no faltarán</span>. 😂🎮
+            </p>
+            <div class="roster-redes">
+              <a href="https://www.youtube.com/@Josue07Broders" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
+              <a href="https://www.instagram.com/josue07_yt/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@josue07broders" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
+            </div>
+          </div>
+          <p>Josue07</p>
+        </div>
+
+        <!-- 6. Aldo De Nigris -->
+        <div class="roster-item">
+          <img src="Disrupted/assets/images/aldo.jpg" alt="Aldo De Nigris" class="roster-img">
+          <div class="roster-hover">
+            <p class="bio">
+              <strong>Aldo T de Nigris</strong> es un <span class="resaltado">creador de contenido y atleta mexicano</span>, 
+              combinando <span class="resaltado">humor, entrenamiento y pasión por el fútbol</span>. ⚽🔥
+            </p>
+            <div class="roster-redes">
+              <a href="https://www.youtube.com/@MasAllaDelFierro" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
+              <a href="https://www.instagram.com/aldotdenigris/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@aldotdenigris2?lang=es" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
+            </div>
+          </div>
+          <p>Aldo De Nigris</p>
+        </div>
+
+        <!-- 7. Juan de Dios G -->
+        <div class="roster-item">
+          <img src="Disrupted/assets/images/juan.jpg" alt="Juan de Dios G" class="roster-img">
+          <div class="roster-hover">
+            <p class="bio">
+              <strong>Juan de Dios García</strong> es un <span class="resaltado">creador de contenido mexicano</span> 
+              que arrasa en redes con <span class="resaltado">comedia, baile y buena vibra</span>. 
+              Siempre sacando risas. 😂🔥
+            </p>
+            <div class="roster-redes">
+              <a href="https://www.instagram.com/juanddiosg/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@juanddiosgg?lang=es" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
+            </div>
+          </div>
+          <p>Juan de Dios G</p>
+        </div>
+
+        <!-- 8. Yetus -->
+        <div class="roster-item">
+          <img src="Disrupted/assets/images/yetus.jpg" alt="Yetus" class="roster-img">
+          <div class="roster-hover">
+            <p class="bio">
+              <strong>Yetus Prime</strong> es un <span class="resaltado">creador de contenido y atleta mexicano</span>, 
+              combinando <span class="resaltado">fitness</span>, <span class="resaltado">disciplina</span> 
+              y <span class="resaltado">adrenalina</span>, pero siempre con <span class="resaltado">muchísimo humor</span>. 💪😂🔥
+            </p>
+            <div class="roster-redes">
+              <a href="https://www.youtube.com/@MasAllaDelFierro" target="_blank"><img src="Disrupted/assets/images/youtube.png" alt="YouTube"></a>
+              <a href="https://www.instagram.com/yetus_prime/" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@yetusprime777" target="_blank"><img src="Disrupted/assets/images/tiktok.png" alt="TikTok"></a>
+            </div>
+          </div>
+          <p>Yetus</p>
+        </div>
+
+        <!-- 9. Botón VER MÁS -->
+        <div class="roster-item ver-mas">
+          <a href="roster.html">
+            <img src="Disrupted/assets/images/iconred.png" alt="Ver Más" class="roster-img">
+            <div class="ver-mas-text-container">
+              <p class="ver-mas-text">VER MÁS</p>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-
-    <!-- 📌 SECCIÓN EMPRESAS QUE CONFIARON EN NOSOTROS -->
-<section id="empresas">
+  <!-- SECCIÓN EMPRESAS -->
+  <section id="empresas">
     <h2>Empresas que confiaron en nosotros</h2>
     <div class="empresas-container">
-        <!-- 🔹 PRIMERA FILA (Marcas TOP) -->
-        <div class="empresa"><img src="Disrupted/assets/images/yt.png" alt="YouTube"></div>
-        <div class="empresa"><img src="Disrupted/assets/images/tt.png" alt="TikTok"></div>
-        <div class="empresa"><img src="Disrupted/assets/images/twitch.png" alt="Twitch"></div>
+      <!-- PRIMERA FILA -->
+      <div class="empresa"><img src="Disrupted/assets/images/yt.png" alt="YouTube"></div>
+      <div class="empresa"><img src="Disrupted/assets/images/tt.png" alt="TikTok"></div>
+      <div class="empresa"><img src="Disrupted/assets/images/twitch.png" alt="Twitch"></div>
 
-        <!-- 🔹 SEGUNDA FILA -->
-        <div class="empresa"><img src="Disrupted/assets/images/ea.png" alt="EA Sports"></div>
-        <div class="empresa"><img src="Disrupted/assets/images/sony.png" alt="Sony Music"></div>
-        <div class="empresa"><img src="Disrupted/assets/images/garena.png" alt="Garena Free Fire"></div>
+      <!-- SEGUNDA FILA -->
+      <div class="empresa"><img src="Disrupted/assets/images/ea.png" alt="EA Sports"></div>
+      <div class="empresa"><img src="Disrupted/assets/images/sony.png" alt="Sony Music"></div>
+      <div class="empresa"><img src="Disrupted/assets/images/garena.png" alt="Garena Free Fire"></div>
 
-        <!-- 🔹 TERCERA FILA -->
-        <div class="empresa"><img src="Disrupted/assets/images/telcel.png" alt="Telcel"></div>
-        <div class="empresa"><img src="Disrupted/assets/images/gamergy.webp" alt="Gamergy"></div>
-        <div class="empresa"><img src="Disrupted/assets/images/ggtech.jpg" alt="GG Tech"></div>
+      <!-- TERCERA FILA -->
+      <div class="empresa"><img src="Disrupted/assets/images/telcel.png" alt="Telcel"></div>
+      <div class="empresa"><img src="Disrupted/assets/images/gamergy.webp" alt="Gamergy"></div>
+      <div class="empresa"><img src="Disrupted/assets/images/ggtech.jpg" alt="GG Tech"></div>
 
-        <!-- 🔹 CUARTA FILA (Opcional si agregamos más empresas) -->
-        <div class="empresa"><img src="Disrupted/assets/images/temu.png" alt="Temu"></div>
+      <!-- CUARTA FILA -->
+      <div class="empresa"><img src="Disrupted/assets/images/temu.png" alt="Temu"></div>
     </div>
-</section>
+  </section>
 
-
-    <!-- 📌 SECCIÓN CONTACTO -->
-<section id="contacto">
+  <!-- SECCIÓN CONTACTO -->
+  <section id="contacto">
     <h2>HABLEMOS</h2>
     <p>¿Tienes una idea? ¿Quieres trabajar con nosotros? Contáctanos.</p>
 
     <div class="contacto-container">
-        <form id="contact-form" action="https://formspree.io/f/xovjoznp" method="POST">
-            
-            <div class="input-group">
-                <input type="text" name="name" required>
-                <label>Nombre</label>
-            </div>
+      <form id="contact-form" action="https://formspree.io/f/xovjoznp" method="POST">
+        <div class="input-group">
+          <input type="text" name="name" required>
+          <label>Nombre</label>
+        </div>
 
-            <div class="input-group">
-                <input type="email" name="email" required>
-                <label>Email</label>
-            </div>
+        <div class="input-group">
+          <input type="email" name="email" required>
+          <label>Email</label>
+        </div>
 
-            <div class="input-group">
-                <textarea name="message" rows="5" required></textarea>
-                <label>Mensaje</label>
-            </div>
+        <div class="input-group">
+          <textarea name="message" rows="5" required></textarea>
+          <label>Mensaje</label>
+        </div>
 
-            <button type="submit" class="btn-enviar">ENVIAR</button>
+        <button type="submit" class="btn-enviar">ENVIAR</button>
 
-            <!-- 📌 Mensaje de éxito (inicialmente oculto) -->
-            <p id="mensaje-exito" style="display: none; color: #4CAF50; font-size: 1.2rem; margin-top: 15px;">
-                ✅ ¡Gracias! Tu mensaje ha sido enviado.
-            </p>
-        </form>
+        <!-- Mensaje de éxito (oculto al inicio) -->
+        <p id="mensaje-exito" style="display: none; color: #4CAF50; font-size: 1.2rem; margin-top: 15px;">
+          ✅ ¡Gracias! Tu mensaje ha sido enviado.
+        </p>
+      </form>
     </div>
-</section>
+  </section>
 
-<!-- 📌 FOOTER -->
-<footer id="footer">
+  <!-- FOOTER -->
+  <footer id="footer">
     <div class="footer-container">
-        <!-- 🔹 Izquierda: Logo y Disclaimer en línea -->
-        <div class="footer-left">
-            <img src="Disrupted/assets/images/DSRPTD.png" alt="DISRUPTED Logo">
-            <p class="footer-legal">© 2024 DISRUPTED. Todos los derechos reservados.</p>
-        </div>
+      <!-- Izquierda: Logo + Disclaimer -->
+      <div class="footer-left">
+        <img src="Disrupted/assets/images/DSRPTD.png" alt="DISRUPTED Logo">
+        <p class="footer-legal">© 2024 DISRUPTED. Todos los derechos reservados.</p>
+      </div>
 
-        <!-- 🔹 Derecha: Redes Sociales -->
-        <div class="footer-right">    
-            <a href="https://www.instagram.com/disrupted_agency/?hl=es" target="_blank"><img src="Disrupted/assets/images/insta.png" alt="Instagram"></a>
-            <a href="#" target="_blank"><img src="Disrupted/assets/images/in.png" alt="TikTok"></a>
-        </div>
+      <!-- Derecha: Redes Sociales -->
+      <div class="footer-right">
+        <a href="https://www.instagram.com/disrupted_agency/?hl=es" target="_blank">
+          <img src="Disrupted/assets/images/insta.png" alt="Instagram">
+        </a>
+        <a href="#" target="_blank">
+          <img src="Disrupted/assets/images/in.png" alt="TikTok">
+        </a>
+      </div>
     </div>
-</footer>
+  </footer>
 
-
-    <!-- 📌 Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init(); // 📌 Inicializa AOS después de que la página cargue
-    </script>
-    <script src="Disrupted/assets/js/script.js"></script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init(); // Inicializa AOS una vez que la página ha cargado
+  </script>
+  <script src="Disrupted/assets/js/script.js"></script>
 </body>
 </html>
